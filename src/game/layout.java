@@ -7,6 +7,7 @@
 package game;
 
 import java.awt.Color;
+import javax.swing.BorderFactory;
 
 /**
  *
@@ -18,12 +19,38 @@ public class layout extends javax.swing.JFrame {
     String[] yellowTrack = {"place28", "place29", "place30", "place31", "place32", "place33", "place34", "place135", "place36", "place37", "place38", "place39", "place40", "place41", "place42", "place43", "place44", "place45", "place46", "place47", "place48", "place49", "place50", "place51", "place52", "place1", "place2", "place3", "place4", "place5", "place6", "place7", "place8", "place9", "place10", "place11", "place12", "place13", "place14", "place15", "place16", "place17", "place18", "place19", "place20", "place21", "place22", "place23", "place24", "place25", "place26", "yellowplace1", "yellowplace2", "yellowplace3", "yellowplace4", "yellowplace5", "yellowplace6"};
     String[] blueTrack = {"place41", "place42", "place43", "place44", "place45", "place46", "place47", "place48", "place49", "place50", "place51", "place52", "place1", "place2", "place3", "place4", "place5", "place6", "place7", "place8", "place9", "place10", "place11", "place12", "place13", "place14", "place15", "place16", "place17", "place18", "place19", "place20", "place21", "place22", "place23", "place24", "place25", "place26", "place27", "place28", "place29", "place30", "place31", "place32", "place33", "place34", "place135", "place36", "place37", "place38", "place39", "blueplace1", "blueplace2", "blueplace3", "blueplace4", "blueplace5", "blueplace6"};
     
+    String[] currentPlayer={"red", "green", "yellow", "blue"};
+    int current = 0;
+    
+    boolean redStart1 = true;
+    boolean redStart2 = true;
+    boolean greenStart1 = true;
+    boolean greenStart2 = true;
+    boolean yellowStart1 = true;
+    boolean yellowStart2 = true;
+    boolean blueStart1 = true;
+    boolean blueStart2 = true;
+    
 
     /**
      * Creates new form layout
      */
     public layout() {
         initComponents();
+        
+        redLabel.setVisible(true);
+        greenLabel.setVisible(false);
+        yellowLabel.setVisible(false);
+        blueLabel.setVisible(false);
+        
+        redpionplace1.setBackground(Color.red);
+        redpionplace2.setBackground(Color.red);
+        greenpionplace1.setBackground(Color.green);
+        greenpionplace2.setBackground(Color.green);
+        yellowpionplace1.setBackground(Color.yellow);
+        yellowpionplace2.setBackground(Color.yellow);
+        bluepionplace1.setBackground(Color.blue);
+        bluepionplace2.setBackground(Color.blue);
     }
 
     /**
@@ -137,10 +164,10 @@ public class layout extends javax.swing.JFrame {
         yellowplace6 = new javax.swing.JPanel();
         redplace6 = new javax.swing.JPanel();
         mousebutton = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        redLabel = new javax.swing.JLabel();
+        greenLabel = new javax.swing.JLabel();
+        yellowLabel = new javax.swing.JLabel();
+        blueLabel = new javax.swing.JLabel();
         diceplace = new javax.swing.JLabel();
 
         jPanel60.setBackground(new java.awt.Color(255, 0, 0));
@@ -1622,21 +1649,21 @@ public class layout extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel5.setText("CURRENT: PLAYER 1");
+        redLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        redLabel.setForeground(new java.awt.Color(255, 0, 0));
+        redLabel.setText("CURRENT: PLAYER 1");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 255, 0));
-        jLabel6.setText("CURRENT: PLAYER 2");
+        greenLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        greenLabel.setForeground(new java.awt.Color(0, 255, 0));
+        greenLabel.setText("CURRENT: PLAYER 2");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel7.setText("CURRENT: PLAYER 3");
+        yellowLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        yellowLabel.setForeground(new java.awt.Color(255, 255, 0));
+        yellowLabel.setText("CURRENT: PLAYER 3");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel8.setText("CURRENT: PLAYER 4");
+        blueLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        blueLabel.setForeground(new java.awt.Color(0, 0, 255));
+        blueLabel.setText("CURRENT: PLAYER 4");
 
         diceplace.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         diceplace.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1692,10 +1719,10 @@ public class layout extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))))
+                            .addComponent(redLabel)
+                            .addComponent(greenLabel)
+                            .addComponent(yellowLabel)
+                            .addComponent(blueLabel))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -1958,13 +1985,13 @@ public class layout extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
+                                .addComponent(redLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6)
+                                .addComponent(greenLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7)
+                                .addComponent(yellowLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8)
+                                .addComponent(blueLabel)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(diceplace, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1980,8 +2007,94 @@ public class layout extends javax.swing.JFrame {
 
     private void mousebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mousebuttonActionPerformed
         // TODO add your handling code here:
-        int resultdice = random.getRandom(1, 6);
-        diceplace.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dice"+ resultdice+".png")));
+        int resultDice = random.getRandom(1, 6);
+        diceplace.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dice"+ resultDice+".png")));
+        
+        if(resultDice != 6){
+            if(current==(currentPlayer.length-1)){
+                current = 0;
+            } else {
+                current+=1;
+            }
+        } else {
+            current = current;
+            
+            switch (current){
+                case 0:
+                    if(redStart1==true){
+                        redpionplace1.setBackground(Color.white);
+                        place2.setBorder(BorderFactory.createLineBorder(Color.red));
+                        redStart1 = false;
+                    } else if(redStart2==true){
+                        redpionplace2.setBackground(Color.white);
+                        place2.setBorder(BorderFactory.createLineBorder(Color.red));
+                        redStart2 = false;
+                    }
+                    break;
+                case 1:
+                    if(greenStart1==true){
+                        greenpionplace1.setBackground(Color.white);
+                        place15.setBorder(BorderFactory.createLineBorder(Color.green));
+                        greenStart1 = false;
+                    } else if(greenStart2==true){
+                        greenpionplace2.setBackground(Color.white);
+                        place15.setBorder(BorderFactory.createLineBorder(Color.green));
+                        greenStart2 = false;
+                    }
+                    break;
+                case 2:
+                    if(yellowStart1==true){
+                        yellowpionplace1.setBackground(Color.white);
+                        place28.setBorder(BorderFactory.createLineBorder(Color.yellow));
+                        yellowStart1 = false;
+                    } else if(yellowStart2==true){
+                        yellowpionplace2.setBackground(Color.white);
+                        place28.setBorder(BorderFactory.createLineBorder(Color.yellow));
+                        yellowStart2 = false;
+                    }
+                    break;
+                case 3:
+                    if(blueStart1==true){
+                        bluepionplace1.setBackground(Color.white);
+                        place41.setBorder(BorderFactory.createLineBorder(Color.blue));
+                        blueStart1 = false;
+                    } else if(blueStart2==true){
+                        bluepionplace2.setBackground(Color.white);
+                        place41.setBorder(BorderFactory.createLineBorder(Color.blue));
+                        blueStart2 = false;
+                    }
+                    break;
+            }
+        }
+        
+        System.out.println(currentPlayer[current]);
+        
+        switch (current){
+            case 0:
+                redLabel.setVisible(true);
+                greenLabel.setVisible(false);
+                yellowLabel.setVisible(false);
+                blueLabel.setVisible(false);
+                break;
+            case 1:
+                redLabel.setVisible(false);
+                greenLabel.setVisible(true);
+                yellowLabel.setVisible(false);
+                blueLabel.setVisible(false);
+                break;
+            case 2:
+                redLabel.setVisible(false);
+                greenLabel.setVisible(false);
+                yellowLabel.setVisible(true);
+                blueLabel.setVisible(false);
+                break;
+            case 3:
+                redLabel.setVisible(false);
+                greenLabel.setVisible(false);
+                yellowLabel.setVisible(false);
+                blueLabel.setVisible(true);
+                break;
+        }
     }//GEN-LAST:event_mousebuttonActionPerformed
 
     /**
@@ -2020,6 +2133,7 @@ public class layout extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel blueLabel;
     private javax.swing.JPanel bluepionplace1;
     private javax.swing.JPanel bluepionplace2;
     private javax.swing.JPanel blueplace1;
@@ -2029,6 +2143,7 @@ public class layout extends javax.swing.JFrame {
     private javax.swing.JPanel blueplace5;
     private javax.swing.JPanel blueplace6;
     private javax.swing.JLabel diceplace;
+    private javax.swing.JLabel greenLabel;
     private javax.swing.JPanel greenpionplace1;
     private javax.swing.JPanel greenpionplace2;
     private javax.swing.JPanel greenplace1;
@@ -2041,10 +2156,6 @@ public class layout extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel60;
@@ -2111,6 +2222,7 @@ public class layout extends javax.swing.JFrame {
     private javax.swing.JPanel place7;
     private javax.swing.JPanel place8;
     private javax.swing.JPanel place9;
+    private javax.swing.JLabel redLabel;
     private javax.swing.JPanel redpionplace1;
     private javax.swing.JPanel redpionplace2;
     private javax.swing.JPanel redplace1;
@@ -2119,6 +2231,7 @@ public class layout extends javax.swing.JFrame {
     private javax.swing.JPanel redplace4;
     private javax.swing.JPanel redplace5;
     private javax.swing.JPanel redplace6;
+    private javax.swing.JLabel yellowLabel;
     private javax.swing.JPanel yellowpionplace1;
     private javax.swing.JPanel yellowpionplace2;
     private javax.swing.JPanel yellowplace1;
