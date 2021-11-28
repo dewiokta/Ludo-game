@@ -44,6 +44,8 @@ public class layout extends javax.swing.JFrame {
     int helpBlueNow2 = 0;
     
     String redNow1="", redNow2="", greenNow1="", greenNow2="", yellowNow1="", yellowNow2="", blueNow1="", blueNow2="";
+    
+    int idxWinRed = 0, idxWinGreen = 0, idxWinYellow = 0, idxWinBlue = 0;
 
     /**
      * Creates new form layout
@@ -55,6 +57,11 @@ public class layout extends javax.swing.JFrame {
         greenLabel.setVisible(false);
         yellowLabel.setVisible(false);
         blueLabel.setVisible(false);
+        
+        redMv.setVisible(false);
+        greenMv.setVisible(false);
+        yellowMv.setVisible(false);
+        blueMv.setVisible(false);
         
         redpionplace1.setBackground(Color.red);
         redpionplace2.setBackground(Color.red);
@@ -182,6 +189,10 @@ public class layout extends javax.swing.JFrame {
         yellowLabel = new javax.swing.JLabel();
         blueLabel = new javax.swing.JLabel();
         diceplace = new javax.swing.JLabel();
+        redMv = new javax.swing.JLabel();
+        greenMv = new javax.swing.JLabel();
+        yellowMv = new javax.swing.JLabel();
+        blueMv = new javax.swing.JLabel();
 
         jPanel60.setBackground(new java.awt.Color(255, 0, 0));
         jPanel60.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1726,6 +1737,22 @@ public class layout extends javax.swing.JFrame {
         diceplace.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         diceplace.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        redMv.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        redMv.setForeground(new java.awt.Color(255, 0, 0));
+        redMv.setText("PLAYER 1");
+
+        greenMv.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        greenMv.setForeground(new java.awt.Color(0, 255, 0));
+        greenMv.setText("PLAYER 2");
+
+        yellowMv.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        yellowMv.setForeground(new java.awt.Color(255, 255, 0));
+        yellowMv.setText("PLAYER 3");
+
+        blueMv.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        blueMv.setForeground(new java.awt.Color(0, 0, 255));
+        blueMv.setText("PLAYER 4");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1884,7 +1911,13 @@ public class layout extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(diceplace, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(mousebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(mousebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(redMv)
+                            .addComponent(greenMv)
+                            .addComponent(yellowMv)
+                            .addComponent(blueMv)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2036,24 +2069,34 @@ public class layout extends javax.swing.JFrame {
                     .addComponent(jPanel62, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(mousebutton)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(redLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(greenLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(yellowLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(blueLabel)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(diceplace, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(30, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(mousebutton)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addContainerGap(30, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(redMv)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(greenMv)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(yellowMv)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(blueMv))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(redLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(greenLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(yellowLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(blueLabel)))
+                                .addGap(0, 0, Short.MAX_VALUE))))))
         );
 
         pack();
@@ -2066,28 +2109,10 @@ public class layout extends javax.swing.JFrame {
         
         if(resultDice != 6){
             if(current==(currentPlayer.length-1)){
-                current = 0;
-            } else {
                 switch (current){
                     case 0:
                         if(redStart1==false && redStart2==false){
-                            
-                        } else if (redStart1==false || redStart2==false){
-                            if(helpRedNow1==0){
-                                helpRedNow1 = resultDice;
-                                redNow1 = redTrack[helpRedNow1];
-                                place2.addMouseListener(new java.awt.event.MouseAdapter() {
-                                    @Override
-                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
-                                        placeMouseClicked(evt);
-                                    }
-                                    
-                                    private void placeMouseClicked(MouseEvent evt) {
-                                        redSetBg(redNow1);
-                                        whiteSetBg("place2");
-                                    }
-                                });
-                            } else if(helpRedNow2==0){
+                            if(helpRedNow2==0){
                                 helpRedNow2 = resultDice;
                                 redNow2 = redTrack[helpRedNow2];
                                 place2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2102,21 +2127,561 @@ public class layout extends javax.swing.JFrame {
                                     }
                                 });
                             } else {
-                                String n = redTrack[helpRedNow1];
-                                helpRedNow1 = (helpRedNow1 + resultDice);
+                                int n1 = (helpRedNow1 + resultDice);
+                                int n2 = (helpRedNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = redTrack[helpRedNow1];
+                                    helpRedNow1 = (helpRedNow1 + resultDice);
+                                    redNow1 = redTrack[helpRedNow1];
+                                    redAddList(n, redNow1);
+                                    if(helpRedNow1==57){
+                                        idxWinRed += 1;
+                                    }
+                                } else if(n2<=57){
+                                    String n = redTrack[helpRedNow2];
+                                    helpRedNow2 = (helpRedNow2 + resultDice);
+                                    redNow2 = redTrack[helpRedNow2];
+                                    redAddList(n, redNow2);
+                                    if(helpRedNow2==57){
+                                        idxWinRed += 1;
+                                    }
+                                }
+                            }
+                        } else if (redStart1==false){
+                            if(helpRedNow1==0){
+                                helpRedNow1 = resultDice;
                                 redNow1 = redTrack[helpRedNow1];
-                                redAddList(n, redNow1);
+                                place2.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        redSetBg(redNow1);
+                                        whiteSetBg("place2");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpRedNow1 + resultDice);
+                                int n2 = (helpRedNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = redTrack[helpRedNow1];
+                                    helpRedNow1 = (helpRedNow1 + resultDice);
+                                    redNow1 = redTrack[helpRedNow1];
+                                    redAddList(n, redNow1);
+                                    if(helpRedNow1==57){
+                                        idxWinRed += 1;
+                                    }
+                                } else if(n2<=57){
+                                    redpionplace2.setBackground(Color.white);
+                                    place2.setBackground(Color.red);
+                                    redStart2 = false;
+                                }
                             }
                         }
                         break;
                     case 1:
-                        
+                        if(greenStart1==false && greenStart2==false){
+                            if(helpGreenNow2==0){
+                                helpGreenNow2 = resultDice;
+                                greenNow2 = greenTrack[helpGreenNow2];
+                                place15.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        greenSetBg(greenNow2);
+                                        whiteSetBg("place15");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpGreenNow1 + resultDice);
+                                int n2 = (helpGreenNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = greenTrack[helpGreenNow1];
+                                    helpGreenNow1 = (helpGreenNow1 + resultDice);
+                                    greenNow1 = greenTrack[helpGreenNow1];
+                                    greenAddList(n, greenNow1);
+                                    if(helpGreenNow1==57){
+                                        idxWinGreen += 1;
+                                    }
+                                } else if(n2<=57){
+                                    String n = greenTrack[helpGreenNow2];
+                                    helpGreenNow2 = (helpGreenNow2 + resultDice);
+                                    greenNow2 = greenTrack[helpGreenNow2];
+                                    greenAddList(n, greenNow2);
+                                    if(helpGreenNow2==57){
+                                        idxWinGreen += 1;
+                                    }
+                                }
+                            }
+                        } else if (greenStart1==false){
+                            if(helpGreenNow1==0){
+                                helpGreenNow1 = resultDice;
+                                greenNow1 = greenTrack[helpGreenNow1];
+                                place15.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        greenSetBg(greenNow1);
+                                        whiteSetBg("place15");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpGreenNow1 + resultDice);
+                                int n2 = (helpGreenNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = greenTrack[helpGreenNow1];
+                                    helpGreenNow1 = (helpGreenNow1 + resultDice);
+                                    greenNow1 = greenTrack[helpGreenNow1];
+                                    greenAddList(n, greenNow1);
+                                    if(helpGreenNow1==57){
+                                        idxWinGreen += 1;
+                                    }
+                                } else if(n2<=57){
+                                    greenpionplace2.setBackground(Color.white);
+                                    place15.setBackground(Color.green);
+                                    greenStart2 = false;
+                                }
+                            }
+                        }
                         break;
                     case 2:
-                        
+                        if(yellowStart1==false && yellowStart2==false){
+                            if(helpYellowNow2==0){
+                                helpYellowNow2 = resultDice;
+                                yellowNow2 = yellowTrack[helpYellowNow2];
+                                place28.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        yellowSetBg(yellowNow2);
+                                        whiteSetBg("place28");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpYellowNow1 + resultDice);
+                                int n2 = (helpYellowNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = yellowTrack[helpYellowNow1];
+                                    helpYellowNow1 = (helpYellowNow1 + resultDice);
+                                    yellowNow1 = yellowTrack[helpYellowNow1];
+                                    yellowAddList(n, yellowNow1);
+                                    if(helpYellowNow1==57){
+                                        idxWinYellow += 1;
+                                    }
+                                } else if(n2<=57){
+                                    String n = yellowTrack[helpYellowNow2];
+                                    helpYellowNow2 = (helpYellowNow2 + resultDice);
+                                    yellowNow2 = yellowTrack[helpYellowNow2];
+                                    yellowAddList(n, yellowNow2);
+                                    if(helpYellowNow2==57){
+                                        idxWinYellow += 1;
+                                    }
+                                }
+                            }
+                        } else if (yellowStart1==false){
+                            if(helpYellowNow1==0){
+                                helpYellowNow1 = resultDice;
+                                yellowNow1 = yellowTrack[helpYellowNow1];
+                                place28.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        yellowSetBg(yellowNow1);
+                                        whiteSetBg("place28");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpYellowNow1 + resultDice);
+                                int n2 = (helpYellowNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = yellowTrack[helpYellowNow1];
+                                    helpYellowNow1 = (helpYellowNow1 + resultDice);
+                                    yellowNow1 = yellowTrack[helpYellowNow1];
+                                    yellowAddList(n, yellowNow1);
+                                    if(helpYellowNow1==57){
+                                        idxWinYellow += 1;
+                                    }
+                                } else if(n2<=57){
+                                    yellowpionplace2.setBackground(Color.white);
+                                    place28.setBackground(Color.yellow);
+                                    yellowStart2 = false;
+                                }
+                            }
+                        }
                         break;
                     case 3:
-                        
+                        if(blueStart1==false && blueStart2==false){
+                            if(helpBlueNow2==0){
+                                helpBlueNow2 = resultDice;
+                                blueNow2 = blueTrack[helpBlueNow2];
+                                place41.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        blueSetBg(blueNow2);
+                                        whiteSetBg("place41");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpBlueNow1 + resultDice);
+                                int n2 = (helpBlueNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = blueTrack[helpBlueNow1];
+                                    helpBlueNow1 = (helpBlueNow1 + resultDice);
+                                    blueNow1 = blueTrack[helpBlueNow1];
+                                    blueAddList(n, blueNow1);
+                                    if(helpBlueNow1==57){
+                                        idxWinBlue += 1;
+                                    }
+                                } else if(n2<=57){
+                                    String n = blueTrack[helpBlueNow2];
+                                    helpBlueNow2 = (helpBlueNow2 + resultDice);
+                                    blueNow2 = blueTrack[helpBlueNow2];
+                                    blueAddList(n, blueNow2);
+                                    if(helpBlueNow2==57){
+                                        idxWinBlue += 1;
+                                    }
+                                }
+                            }
+                        } else if (blueStart1==false){
+                            if(helpBlueNow1==0){
+                                helpBlueNow1 = resultDice;
+                                blueNow1 = blueTrack[helpBlueNow1];
+                                place41.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        blueSetBg(blueNow1);
+                                        whiteSetBg("place41");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpBlueNow1 + resultDice);
+                                int n2 = (helpBlueNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = blueTrack[helpBlueNow1];
+                                    helpBlueNow1 = (helpBlueNow1 + resultDice);
+                                    blueNow1 = blueTrack[helpBlueNow1];
+                                    blueAddList(n, blueNow1);
+                                    if(helpBlueNow1==57){
+                                        idxWinBlue += 1;
+                                    }
+                                } else if(n2<=57){
+                                    bluepionplace2.setBackground(Color.white);
+                                    place41.setBackground(Color.blue);
+                                    blueStart2 = false;
+                                }
+                            }
+                        }
+                        break;
+                }
+                
+                current = 0;
+            } else {
+                switch (current){
+                    case 0:
+                        if(redStart1==false && redStart2==false){
+                            if(helpRedNow2==0){
+                                helpRedNow2 = resultDice;
+                                redNow2 = redTrack[helpRedNow2];
+                                place2.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        redSetBg(redNow2);
+                                        whiteSetBg("place2");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpRedNow1 + resultDice);
+                                int n2 = (helpRedNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = redTrack[helpRedNow1];
+                                    helpRedNow1 = (helpRedNow1 + resultDice);
+                                    redNow1 = redTrack[helpRedNow1];
+                                    redAddList(n, redNow1);
+                                    if(helpRedNow1==57){
+                                        idxWinRed += 1;
+                                    }
+                                } else if(n2<=57){
+                                    String n = redTrack[helpRedNow2];
+                                    helpRedNow2 = (helpRedNow2 + resultDice);
+                                    redNow2 = redTrack[helpRedNow2];
+                                    redAddList(n, redNow2);
+                                    if(helpRedNow2==57){
+                                        idxWinRed += 1;
+                                    }
+                                }
+                            }
+                        } else if (redStart1==false){
+                            if(helpRedNow1==0){
+                                helpRedNow1 = resultDice;
+                                redNow1 = redTrack[helpRedNow1];
+                                place2.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        redSetBg(redNow1);
+                                        whiteSetBg("place2");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpRedNow1 + resultDice);
+                                int n2 = (helpRedNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = redTrack[helpRedNow1];
+                                    helpRedNow1 = (helpRedNow1 + resultDice);
+                                    redNow1 = redTrack[helpRedNow1];
+                                    redAddList(n, redNow1);
+                                    if(helpRedNow1==57){
+                                        idxWinRed += 1;
+                                    }
+                                } else if(n2<=57){
+                                    redpionplace2.setBackground(Color.white);
+                                    place2.setBackground(Color.red);
+                                    redStart2 = false;
+                                }
+                            }
+                        }
+                        break;
+                    case 1:
+                        if(greenStart1==false && greenStart2==false){
+                            if(helpGreenNow2==0){
+                                helpGreenNow2 = resultDice;
+                                greenNow2 = greenTrack[helpGreenNow2];
+                                place15.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        greenSetBg(greenNow2);
+                                        whiteSetBg("place15");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpGreenNow1 + resultDice);
+                                int n2 = (helpGreenNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = greenTrack[helpGreenNow1];
+                                    helpGreenNow1 = (helpGreenNow1 + resultDice);
+                                    greenNow1 = greenTrack[helpGreenNow1];
+                                    greenAddList(n, greenNow1);
+                                    if(helpGreenNow1==57){
+                                        idxWinGreen += 1;
+                                    }
+                                } else if(n2<=57){
+                                    String n = greenTrack[helpGreenNow2];
+                                    helpGreenNow2 = (helpGreenNow2 + resultDice);
+                                    greenNow2 = greenTrack[helpGreenNow2];
+                                    greenAddList(n, greenNow2);
+                                    if(helpGreenNow2==57){
+                                        idxWinGreen += 1;
+                                    }
+                                }
+                            }
+                        } else if (greenStart1==false){
+                            if(helpGreenNow1==0){
+                                helpGreenNow1 = resultDice;
+                                greenNow1 = greenTrack[helpGreenNow1];
+                                place15.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        greenSetBg(greenNow1);
+                                        whiteSetBg("place15");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpGreenNow1 + resultDice);
+                                int n2 = (helpGreenNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = greenTrack[helpGreenNow1];
+                                    helpGreenNow1 = (helpGreenNow1 + resultDice);
+                                    greenNow1 = greenTrack[helpGreenNow1];
+                                    greenAddList(n, greenNow1);
+                                    if(helpGreenNow1==57){
+                                        idxWinGreen += 1;
+                                    }
+                                } else if(n2<=57){
+                                    greenpionplace2.setBackground(Color.white);
+                                    place15.setBackground(Color.green);
+                                    greenStart2 = false;
+                                }
+                            }
+                        }
+                        break;
+                    case 2:
+                        if(yellowStart1==false && yellowStart2==false){
+                            if(helpYellowNow2==0){
+                                helpYellowNow2 = resultDice;
+                                yellowNow2 = yellowTrack[helpYellowNow2];
+                                place28.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        yellowSetBg(yellowNow2);
+                                        whiteSetBg("place28");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpYellowNow1 + resultDice);
+                                int n2 = (helpYellowNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = yellowTrack[helpYellowNow1];
+                                    helpYellowNow1 = (helpYellowNow1 + resultDice);
+                                    yellowNow1 = yellowTrack[helpYellowNow1];
+                                    yellowAddList(n, yellowNow1);
+                                    if(helpYellowNow1==57){
+                                        idxWinYellow += 1;
+                                    }
+                                } else if(n2<=57){
+                                    String n = yellowTrack[helpYellowNow2];
+                                    helpYellowNow2 = (helpYellowNow2 + resultDice);
+                                    yellowNow2 = yellowTrack[helpYellowNow2];
+                                    yellowAddList(n, yellowNow2);
+                                    if(helpYellowNow2==57){
+                                        idxWinYellow += 1;
+                                    }
+                                }
+                            }
+                        } else if (yellowStart1==false){
+                            if(helpYellowNow1==0){
+                                helpYellowNow1 = resultDice;
+                                yellowNow1 = yellowTrack[helpYellowNow1];
+                                place28.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        yellowSetBg(yellowNow1);
+                                        whiteSetBg("place28");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpYellowNow1 + resultDice);
+                                int n2 = (helpYellowNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = yellowTrack[helpYellowNow1];
+                                    helpYellowNow1 = (helpYellowNow1 + resultDice);
+                                    yellowNow1 = yellowTrack[helpYellowNow1];
+                                    yellowAddList(n, yellowNow1);
+                                    if(helpYellowNow1==57){
+                                        idxWinYellow += 1;
+                                    }
+                                } else if(n2<=57){
+                                    yellowpionplace2.setBackground(Color.white);
+                                    place28.setBackground(Color.yellow);
+                                    yellowStart2 = false;
+                                }
+                            }
+                        }
+                        break;
+                    case 3:
+                        if(blueStart1==false && blueStart2==false){
+                            if(helpBlueNow2==0){
+                                helpBlueNow2 = resultDice;
+                                blueNow2 = blueTrack[helpBlueNow2];
+                                place41.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        blueSetBg(blueNow2);
+                                        whiteSetBg("place41");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpBlueNow1 + resultDice);
+                                int n2 = (helpBlueNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = blueTrack[helpBlueNow1];
+                                    helpBlueNow1 = (helpBlueNow1 + resultDice);
+                                    blueNow1 = blueTrack[helpBlueNow1];
+                                    blueAddList(n, blueNow1);
+                                    if(helpBlueNow1==57){
+                                        idxWinBlue += 1;
+                                    }
+                                } else if(n2<=57){
+                                    String n = blueTrack[helpBlueNow2];
+                                    helpBlueNow2 = (helpBlueNow2 + resultDice);
+                                    blueNow2 = blueTrack[helpBlueNow2];
+                                    blueAddList(n, blueNow2);
+                                    if(helpBlueNow2==57){
+                                        idxWinBlue += 1;
+                                    }
+                                }
+                            }
+                        } else if (blueStart1==false){
+                            if(helpBlueNow1==0){
+                                helpBlueNow1 = resultDice;
+                                blueNow1 = blueTrack[helpBlueNow1];
+                                place41.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        blueSetBg(blueNow1);
+                                        whiteSetBg("place41");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpBlueNow1 + resultDice);
+                                int n2 = (helpBlueNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = blueTrack[helpBlueNow1];
+                                    helpBlueNow1 = (helpBlueNow1 + resultDice);
+                                    blueNow1 = blueTrack[helpBlueNow1];
+                                    blueAddList(n, blueNow1);
+                                    if(helpBlueNow1==57){
+                                        idxWinBlue += 1;
+                                    }
+                                } else if(n2<=57){
+                                    bluepionplace2.setBackground(Color.white);
+                                    place41.setBackground(Color.blue);
+                                    blueStart2 = false;
+                                }
+                            }
+                        }
                         break;
                 }
                 
@@ -2132,22 +2697,81 @@ public class layout extends javax.swing.JFrame {
                         //place2.setBorder(BorderFactory.createLineBorder(Color.red));
                         place2.setBackground(Color.red);
                         redStart1 = false;
-                    } else if(redStart2==true){
-                        redpionplace2.setBackground(Color.white);
-                        //place2.setBorder(BorderFactory.createLineBorder(Color.red));
-                        place2.setBackground(Color.red);
-                        redStart2 = false;
+//                    } else if(redStart2==true){
+//                        redpionplace2.setBackground(Color.white);
+//                        //place2.setBorder(BorderFactory.createLineBorder(Color.red));
+//                        place2.setBackground(Color.red);
+//                        redStart2 = false;
                     } else {
-                        place2.addMouseListener(new java.awt.event.MouseAdapter() {
-                            @Override
-                            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                                placeMouseClicked(evt);
+                        if(redStart1==false && redStart2==false){
+                            if(helpRedNow2==0){
+                                helpRedNow2 = resultDice;
+                                redNow2 = redTrack[helpRedNow2];
+                                place2.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        redSetBg(redNow2);
+                                        whiteSetBg("place2");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpRedNow1 + resultDice);
+                                int n2 = (helpRedNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = redTrack[helpRedNow1];
+                                    helpRedNow1 = (helpRedNow1 + resultDice);
+                                    redNow1 = redTrack[helpRedNow1];
+                                    redAddList(n, redNow1);
+                                    if(helpRedNow1==57){
+                                        idxWinRed += 1;
+                                    }
+                                } else if(n2<=57){
+                                    String n = redTrack[helpRedNow2];
+                                    helpRedNow2 = (helpRedNow2 + resultDice);
+                                    redNow2 = redTrack[helpRedNow2];
+                                    redAddList(n, redNow2);
+                                    if(helpRedNow2==57){
+                                        idxWinRed += 1;
+                                    }
+                                }
                             }
-
-                            private void placeMouseClicked(MouseEvent evt) {
-                                place3.setBackground(Color.red);
+                        } else if (redStart1==false){
+                            if(helpRedNow1==0){
+                                helpRedNow1 = resultDice;
+                                redNow1 = redTrack[helpRedNow1];
+                                place2.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        redSetBg(redNow1);
+                                        whiteSetBg("place2");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpRedNow1 + resultDice);
+                                int n2 = (helpRedNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = redTrack[helpRedNow1];
+                                    helpRedNow1 = (helpRedNow1 + resultDice);
+                                    redNow1 = redTrack[helpRedNow1];
+                                    redAddList(n, redNow1);
+                                    if(helpRedNow1==57){
+                                        idxWinRed += 1;
+                                    }
+                                } else if(n2<=57){
+                                    redpionplace2.setBackground(Color.white);
+                                    place2.setBackground(Color.red);
+                                    redStart2 = false;
+                                }
                             }
-                        });
+                        }
                     }
                     break;
                 case 1:
@@ -2156,11 +2780,81 @@ public class layout extends javax.swing.JFrame {
                         //place15.setBorder(BorderFactory.createLineBorder(Color.green));
                         place15.setBackground(Color.green);
                         greenStart1 = false;
-                    } else if(greenStart2==true){
-                        greenpionplace2.setBackground(Color.white);
-                        //place15.setBorder(BorderFactory.createLineBorder(Color.green));
-                        place15.setBackground(Color.green);
-                        greenStart2 = false;
+//                    } else if(greenStart2==true){
+//                        greenpionplace2.setBackground(Color.white);
+//                        //place15.setBorder(BorderFactory.createLineBorder(Color.green));
+//                        place15.setBackground(Color.green);
+//                        greenStart2 = false;
+                    } else {
+                        if(greenStart1==false && greenStart2==false){
+                            if(helpGreenNow2==0){
+                                helpGreenNow2 = resultDice;
+                                greenNow2 = greenTrack[helpGreenNow2];
+                                place15.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        greenSetBg(greenNow2);
+                                        whiteSetBg("place15");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpGreenNow1 + resultDice);
+                                int n2 = (helpGreenNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = greenTrack[helpGreenNow1];
+                                    helpGreenNow1 = (helpGreenNow1 + resultDice);
+                                    greenNow1 = greenTrack[helpGreenNow1];
+                                    greenAddList(n, greenNow1);
+                                    if(helpGreenNow1==57){
+                                        idxWinGreen += 1;
+                                    }
+                                } else if(n2<=57){
+                                    String n = greenTrack[helpGreenNow2];
+                                    helpGreenNow2 = (helpGreenNow2 + resultDice);
+                                    greenNow2 = greenTrack[helpGreenNow2];
+                                    greenAddList(n, greenNow2);
+                                    if(helpGreenNow2==57){
+                                        idxWinGreen += 1;
+                                    }
+                                }
+                            }
+                        } else if (greenStart1==false){
+                            if(helpGreenNow1==0){
+                                helpGreenNow1 = resultDice;
+                                greenNow1 = greenTrack[helpGreenNow1];
+                                place15.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        greenSetBg(greenNow1);
+                                        whiteSetBg("place15");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpGreenNow1 + resultDice);
+                                int n2 = (helpGreenNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = greenTrack[helpGreenNow1];
+                                    helpGreenNow1 = (helpGreenNow1 + resultDice);
+                                    greenNow1 = greenTrack[helpGreenNow1];
+                                    greenAddList(n, greenNow1);
+                                    if(helpGreenNow1==57){
+                                        idxWinGreen += 1;
+                                    }
+                                } else if(n2<=57){
+                                    greenpionplace2.setBackground(Color.white);
+                                    place15.setBackground(Color.green);
+                                    greenStart2 = false;
+                                }
+                            }
+                        }
                     }
                     break;
                 case 2:
@@ -2169,11 +2863,81 @@ public class layout extends javax.swing.JFrame {
                         //place28.setBorder(BorderFactory.createLineBorder(Color.yellow));
                         place28.setBackground(Color.yellow);
                         yellowStart1 = false;
-                    } else if(yellowStart2==true){
-                        yellowpionplace2.setBackground(Color.white);
-                        //place28.setBorder(BorderFactory.createLineBorder(Color.yellow));
-                        place28.setBackground(Color.yellow);
-                        yellowStart2 = false;
+//                    } else if(yellowStart2==true){
+//                        yellowpionplace2.setBackground(Color.white);
+//                        //place28.setBorder(BorderFactory.createLineBorder(Color.yellow));
+//                        place28.setBackground(Color.yellow);
+//                        yellowStart2 = false;
+                    } else {
+                        if(yellowStart1==false && yellowStart2==false){
+                            if(helpYellowNow2==0){
+                                helpYellowNow2 = resultDice;
+                                yellowNow2 = yellowTrack[helpYellowNow2];
+                                place28.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        yellowSetBg(yellowNow2);
+                                        whiteSetBg("place28");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpYellowNow1 + resultDice);
+                                int n2 = (helpYellowNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = yellowTrack[helpYellowNow1];
+                                    helpYellowNow1 = (helpYellowNow1 + resultDice);
+                                    yellowNow1 = yellowTrack[helpYellowNow1];
+                                    yellowAddList(n, yellowNow1);
+                                    if(helpYellowNow1==57){
+                                        idxWinYellow += 1;
+                                    }
+                                } else if(n2<=57){
+                                    String n = yellowTrack[helpYellowNow2];
+                                    helpYellowNow2 = (helpYellowNow2 + resultDice);
+                                    yellowNow2 = yellowTrack[helpYellowNow2];
+                                    yellowAddList(n, yellowNow2);
+                                    if(helpYellowNow2==57){
+                                        idxWinYellow += 1;
+                                    }
+                                }
+                            }
+                        } else if (yellowStart1==false){
+                            if(helpYellowNow1==0){
+                                helpYellowNow1 = resultDice;
+                                yellowNow1 = yellowTrack[helpYellowNow1];
+                                place28.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        yellowSetBg(yellowNow1);
+                                        whiteSetBg("place28");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpYellowNow1 + resultDice);
+                                int n2 = (helpYellowNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = yellowTrack[helpYellowNow1];
+                                    helpYellowNow1 = (helpYellowNow1 + resultDice);
+                                    yellowNow1 = yellowTrack[helpYellowNow1];
+                                    yellowAddList(n, yellowNow1);
+                                    if(helpYellowNow1==57){
+                                        idxWinYellow += 1;
+                                    }
+                                } else if(n2<=57){
+                                    yellowpionplace2.setBackground(Color.white);
+                                    place28.setBackground(Color.yellow);
+                                    yellowStart2 = false;
+                                }
+                            }
+                        }
                     }
                     break;
                 case 3:
@@ -2182,11 +2946,81 @@ public class layout extends javax.swing.JFrame {
                         //place41.setBorder(BorderFactory.createLineBorder(Color.blue));
                         place41.setBackground(Color.blue);
                         blueStart1 = false;
-                    } else if(blueStart2==true){
-                        bluepionplace2.setBackground(Color.white);
-                        //place41.setBorder(BorderFactory.createLineBorder(Color.blue));
-                        place41.setBackground(Color.blue);
-                        blueStart2 = false;
+//                    } else if(blueStart2==true){
+//                        bluepionplace2.setBackground(Color.white);
+//                        //place41.setBorder(BorderFactory.createLineBorder(Color.blue));
+//                        place41.setBackground(Color.blue);
+//                        blueStart2 = false;
+                    } else {
+                        if(blueStart1==false && blueStart2==false){
+                            if(helpBlueNow2==0){
+                                helpBlueNow2 = resultDice;
+                                blueNow2 = blueTrack[helpBlueNow2];
+                                place41.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        blueSetBg(blueNow2);
+                                        whiteSetBg("place41");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpBlueNow1 + resultDice);
+                                int n2 = (helpBlueNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = blueTrack[helpBlueNow1];
+                                    helpBlueNow1 = (helpBlueNow1 + resultDice);
+                                    blueNow1 = blueTrack[helpBlueNow1];
+                                    blueAddList(n, blueNow1);
+                                    if(helpBlueNow1==57){
+                                        idxWinBlue += 1;
+                                    }
+                                } else if(n2<=57){
+                                    String n = blueTrack[helpBlueNow2];
+                                    helpBlueNow2 = (helpBlueNow2 + resultDice);
+                                    blueNow2 = blueTrack[helpBlueNow2];
+                                    blueAddList(n, blueNow2);
+                                    if(helpBlueNow2==57){
+                                        idxWinBlue += 1;
+                                    }
+                                }
+                            }
+                        } else if (blueStart1==false){
+                            if(helpBlueNow1==0){
+                                helpBlueNow1 = resultDice;
+                                blueNow1 = blueTrack[helpBlueNow1];
+                                place41.addMouseListener(new java.awt.event.MouseAdapter() {
+                                    @Override
+                                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                        placeMouseClicked(evt);
+                                    }
+                                    
+                                    private void placeMouseClicked(MouseEvent evt) {
+                                        blueSetBg(blueNow1);
+                                        whiteSetBg("place41");
+                                    }
+                                });
+                            } else {
+                                int n1 = (helpBlueNow1 + resultDice);
+                                int n2 = (helpBlueNow2 + resultDice);
+                                if(n1<=57){
+                                    String n = blueTrack[helpBlueNow1];
+                                    helpBlueNow1 = (helpBlueNow1 + resultDice);
+                                    blueNow1 = blueTrack[helpBlueNow1];
+                                    blueAddList(n, blueNow1);
+                                    if(helpBlueNow1==57){
+                                        idxWinBlue += 1;
+                                    }
+                                } else if(n2<=57){
+                                    bluepionplace2.setBackground(Color.white);
+                                    place41.setBackground(Color.blue);
+                                    blueStart2 = false;
+                                }
+                            }
+                        }
                     }
                     break;
             }
@@ -2200,24 +3034,73 @@ public class layout extends javax.swing.JFrame {
                 greenLabel.setVisible(false);
                 yellowLabel.setVisible(false);
                 blueLabel.setVisible(false);
+                
+                if (resultDice==6){
+                    redMv.setVisible(true);
+                    greenMv.setVisible(false);
+                    yellowMv.setVisible(false);
+                    blueMv.setVisible(false);
+                } else {
+                    redMv.setVisible(false);
+                    greenMv.setVisible(false);
+                    yellowMv.setVisible(false);
+                    blueMv.setVisible(true);
+                }
+                
                 break;
             case 1:
                 redLabel.setVisible(false);
                 greenLabel.setVisible(true);
                 yellowLabel.setVisible(false);
                 blueLabel.setVisible(false);
-                break;
+                
+                if (resultDice==6){
+                    redMv.setVisible(false);
+                    greenMv.setVisible(true);
+                    yellowMv.setVisible(false);
+                    blueMv.setVisible(false);
+                } else {
+                    redMv.setVisible(true);
+                    greenMv.setVisible(false);
+                    yellowMv.setVisible(false);
+                    blueMv.setVisible(false);
+                }
+                    break;
             case 2:
                 redLabel.setVisible(false);
                 greenLabel.setVisible(false);
                 yellowLabel.setVisible(true);
                 blueLabel.setVisible(false);
+                
+                if (resultDice==6){
+                    redMv.setVisible(false);
+                    greenMv.setVisible(false);
+                    yellowMv.setVisible(true);
+                    blueMv.setVisible(false);
+                } else {
+                    redMv.setVisible(false);
+                    greenMv.setVisible(true);
+                    yellowMv.setVisible(false);
+                    blueMv.setVisible(false);
+                }
                 break;
             case 3:
                 redLabel.setVisible(false);
                 greenLabel.setVisible(false);
                 yellowLabel.setVisible(false);
                 blueLabel.setVisible(true);
+                
+                if (resultDice==6){
+                    redMv.setVisible(false);
+                    greenMv.setVisible(false);
+                    yellowMv.setVisible(false);
+                    blueMv.setVisible(true);
+                } else {
+                    redMv.setVisible(false);
+                    greenMv.setVisible(false);
+                    yellowMv.setVisible(true);
+                    blueMv.setVisible(false);
+                }
                 break;
         }
     }//GEN-LAST:event_mousebuttonActionPerformed
@@ -6013,6 +6896,7 @@ public class layout extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel blueLabel;
+    private javax.swing.JLabel blueMv;
     private javax.swing.JPanel bluepionplace1;
     private javax.swing.JPanel bluepionplace2;
     private javax.swing.JPanel blueplace1;
@@ -6023,6 +6907,7 @@ public class layout extends javax.swing.JFrame {
     private javax.swing.JPanel blueplace6;
     private javax.swing.JLabel diceplace;
     private javax.swing.JLabel greenLabel;
+    private javax.swing.JLabel greenMv;
     private javax.swing.JPanel greenpionplace1;
     private javax.swing.JPanel greenpionplace2;
     private javax.swing.JPanel greenplace1;
@@ -6102,6 +6987,7 @@ public class layout extends javax.swing.JFrame {
     private javax.swing.JPanel place8;
     private javax.swing.JPanel place9;
     private javax.swing.JLabel redLabel;
+    private javax.swing.JLabel redMv;
     private javax.swing.JPanel redpionplace1;
     private javax.swing.JPanel redpionplace2;
     private javax.swing.JPanel redplace1;
@@ -6111,6 +6997,7 @@ public class layout extends javax.swing.JFrame {
     private javax.swing.JPanel redplace5;
     private javax.swing.JPanel redplace6;
     private javax.swing.JLabel yellowLabel;
+    private javax.swing.JLabel yellowMv;
     private javax.swing.JPanel yellowpionplace1;
     private javax.swing.JPanel yellowpionplace2;
     private javax.swing.JPanel yellowplace1;
