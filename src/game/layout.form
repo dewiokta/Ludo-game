@@ -3181,7 +3181,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="CURRENT: PLAYER 1"/>
+        <Property name="text" type="java.lang.String" value="NEXT: PLAYER 1"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="greenLabel">
@@ -3192,7 +3192,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="ff" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="CURRENT: PLAYER 2"/>
+        <Property name="text" type="java.lang.String" value="NEXT: PLAYER 2"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="yellowLabel">
@@ -3203,7 +3203,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="CURRENT: PLAYER 3"/>
+        <Property name="text" type="java.lang.String" value="NEXT: PLAYER 3"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="blueLabel">
@@ -3214,7 +3214,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="0" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="CURRENT: PLAYER 4"/>
+        <Property name="text" type="java.lang.String" value="NEXT: PLAYER 4"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="diceplace">

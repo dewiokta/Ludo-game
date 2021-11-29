@@ -1,0 +1,21 @@
+List Progress
+1. Player jalan berdasarkan dadu ( done )
+2. Player keluar base ( done )
+3. Player menendang 
+   - posisi player a 
+   - jika posisi player b == player a, maka player a kembali ke home ( posisi 0 )
+
+4. Player 4
+   - deklarasi langsung player
+   - langsung dengan slot ( 4 index )
+
+5. Server setting ip dan port ( GUI done )
+6. Client masukkan ip dan port ( GUI done )
+
+Rules 
+Client 
+- Sambung ip, port 
+
+Server
+- Setting ip, port, name
+- Setting Player 4

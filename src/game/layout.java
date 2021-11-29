@@ -3,28 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package game;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author User
  */
 public class layout extends javax.swing.JFrame {
+
     int resultDice;
-    
+
     String[] redTrack = {"place2", "place3", "place4", "place5", "place6", "place7", "place8", "place9", "place10", "place11", "place12", "place13", "place14", "place15", "place16", "place17", "place18", "place19", "place20", "place21", "place22", "place23", "place24", "place25", "place26", "place27", "place28", "place29", "place30", "place31", "place32", "place33", "place34", "place135", "place36", "place37", "place38", "place39", "place40", "place41", "place42", "place43", "place44", "place45", "place46", "place47", "place48", "place49", "place50", "place51", "place52", "redplace1", "redplace2", "redplace3", "redplace4", "redplace5", "redplace6"};
     String[] greenTrack = {"place15", "place16", "place17", "place18", "place19", "place20", "place21", "place22", "place23", "place24", "place25", "place26", "place27", "place28", "place29", "place30", "place31", "place32", "place33", "place34", "place135", "place36", "place37", "place38", "place39", "place40", "place41", "place42", "place43", "place44", "place45", "place46", "place47", "place48", "place49", "place50", "place51", "place52", "place1", "place2", "place3", "place4", "place5", "place6", "place7", "place8", "place9", "place10", "place11", "place12", "place13", "greenplace1", "greenplace2", "greenplace3", "greenplace4", "greenplace5", "greenplace6"};
     String[] yellowTrack = {"place28", "place29", "place30", "place31", "place32", "place33", "place34", "place135", "place36", "place37", "place38", "place39", "place40", "place41", "place42", "place43", "place44", "place45", "place46", "place47", "place48", "place49", "place50", "place51", "place52", "place1", "place2", "place3", "place4", "place5", "place6", "place7", "place8", "place9", "place10", "place11", "place12", "place13", "place14", "place15", "place16", "place17", "place18", "place19", "place20", "place21", "place22", "place23", "place24", "place25", "place26", "yellowplace1", "yellowplace2", "yellowplace3", "yellowplace4", "yellowplace5", "yellowplace6"};
     String[] blueTrack = {"place41", "place42", "place43", "place44", "place45", "place46", "place47", "place48", "place49", "place50", "place51", "place52", "place1", "place2", "place3", "place4", "place5", "place6", "place7", "place8", "place9", "place10", "place11", "place12", "place13", "place14", "place15", "place16", "place17", "place18", "place19", "place20", "place21", "place22", "place23", "place24", "place25", "place26", "place27", "place28", "place29", "place30", "place31", "place32", "place33", "place34", "place135", "place36", "place37", "place38", "place39", "blueplace1", "blueplace2", "blueplace3", "blueplace4", "blueplace5", "blueplace6"};
-    
-    String[] currentPlayer={"red", "green", "yellow", "blue"};
+
+    String[] currentPlayer = {"red", "green", "yellow", "blue"};
     int current = 0;
-    
+
     boolean redStart1 = true;
     boolean redStart2 = true;
     boolean greenStart1 = true;
@@ -33,7 +34,7 @@ public class layout extends javax.swing.JFrame {
     boolean yellowStart2 = true;
     boolean blueStart1 = true;
     boolean blueStart2 = true;
-    
+
     int helpRedNow1 = 0;
     int helpRedNow2 = 0;
     int helpGreenNow1 = 0;
@@ -42,9 +43,9 @@ public class layout extends javax.swing.JFrame {
     int helpYellowNow2 = 0;
     int helpBlueNow1 = 0;
     int helpBlueNow2 = 0;
-    
-    String redNow1="", redNow2="", greenNow1="", greenNow2="", yellowNow1="", yellowNow2="", blueNow1="", blueNow2="";
-    
+
+    String redNow1 = "", redNow2 = "", greenNow1 = "", greenNow2 = "", yellowNow1 = "", yellowNow2 = "", blueNow1 = "", blueNow2 = "";
+
     int idxWinRed = 0, idxWinGreen = 0, idxWinYellow = 0, idxWinBlue = 0;
 
     /**
@@ -52,17 +53,17 @@ public class layout extends javax.swing.JFrame {
      */
     public layout() {
         initComponents();
-        
+
         redLabel.setVisible(true);
         greenLabel.setVisible(false);
         yellowLabel.setVisible(false);
         blueLabel.setVisible(false);
-        
+
         redMv.setVisible(false);
         greenMv.setVisible(false);
         yellowMv.setVisible(false);
         blueMv.setVisible(false);
-        
+
         redpionplace1.setBackground(Color.red);
         redpionplace2.setBackground(Color.red);
         greenpionplace1.setBackground(Color.green);
@@ -71,6 +72,18 @@ public class layout extends javax.swing.JFrame {
         yellowpionplace2.setBackground(Color.yellow);
         bluepionplace1.setBackground(Color.blue);
         bluepionplace2.setBackground(Color.blue);
+    }
+
+    public void win() {
+        if (idxWinRed == 2) {
+            JOptionPane.showMessageDialog(this, "Player Red Win !!", "Info", JOptionPane.PLAIN_MESSAGE);
+        } else if (idxWinGreen == 2) {
+            JOptionPane.showMessageDialog(this, "Player Green Win !!", "Info", JOptionPane.PLAIN_MESSAGE);
+        } else if (idxWinBlue == 2) {
+            JOptionPane.showMessageDialog(this, "Player Blue Win !!", "Info", JOptionPane.PLAIN_MESSAGE);
+        } else if (idxWinYellow == 2) {
+            JOptionPane.showMessageDialog(this, "Player Yellow Win !!", "Info", JOptionPane.PLAIN_MESSAGE);
+        }
     }
 
     /**
@@ -1719,19 +1732,19 @@ public class layout extends javax.swing.JFrame {
 
         redLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         redLabel.setForeground(new java.awt.Color(255, 0, 0));
-        redLabel.setText("CURRENT: PLAYER 1");
+        redLabel.setText("NEXT: PLAYER 1");
 
         greenLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         greenLabel.setForeground(new java.awt.Color(0, 255, 0));
-        greenLabel.setText("CURRENT: PLAYER 2");
+        greenLabel.setText("NEXT: PLAYER 2");
 
         yellowLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         yellowLabel.setForeground(new java.awt.Color(255, 255, 0));
-        yellowLabel.setText("CURRENT: PLAYER 3");
+        yellowLabel.setText("NEXT: PLAYER 3");
 
         blueLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         blueLabel.setForeground(new java.awt.Color(0, 0, 255));
-        blueLabel.setText("CURRENT: PLAYER 4");
+        blueLabel.setText("NEXT: PLAYER 4");
 
         diceplace.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         diceplace.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2105,14 +2118,14 @@ public class layout extends javax.swing.JFrame {
     private void mousebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mousebuttonActionPerformed
         // TODO add your handling code here:
         resultDice = random.getRandom(1, 6);
-        diceplace.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dice"+ resultDice+".png")));
-        
-        if(resultDice != 6){
-            if(current==(currentPlayer.length-1)){
-                switch (current){
+        diceplace.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dice" + resultDice + ".png")));
+
+        if (resultDice != 6) {
+            if (current == (currentPlayer.length - 1)) {
+                switch (current) {
                     case 0:
-                        if(redStart1==false && redStart2==false){
-                            if(helpRedNow2==0){
+                        if (redStart1 == false && redStart2 == false) {
+                            if (helpRedNow2 == 0) {
                                 helpRedNow2 = resultDice;
                                 redNow2 = redTrack[helpRedNow2];
                                 place2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2120,7 +2133,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         redSetBg(redNow2);
                                         whiteSetBg("place2");
@@ -2129,26 +2142,28 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpRedNow1 + resultDice);
                                 int n2 = (helpRedNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = redTrack[helpRedNow1];
                                     helpRedNow1 = (helpRedNow1 + resultDice);
                                     redNow1 = redTrack[helpRedNow1];
                                     redAddList(n, redNow1);
-                                    if(helpRedNow1==57){
+                                    if (helpRedNow1 == 57) {
                                         idxWinRed += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     String n = redTrack[helpRedNow2];
                                     helpRedNow2 = (helpRedNow2 + resultDice);
                                     redNow2 = redTrack[helpRedNow2];
                                     redAddList(n, redNow2);
-                                    if(helpRedNow2==57){
+                                    if (helpRedNow2 == 57) {
                                         idxWinRed += 1;
+                                        win();
                                     }
                                 }
                             }
-                        } else if (redStart1==false){
-                            if(helpRedNow1==0){
+                        } else if (redStart1 == false) {
+                            if (helpRedNow1 == 0) {
                                 helpRedNow1 = resultDice;
                                 redNow1 = redTrack[helpRedNow1];
                                 place2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2156,7 +2171,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         redSetBg(redNow1);
                                         whiteSetBg("place2");
@@ -2165,15 +2180,16 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpRedNow1 + resultDice);
                                 int n2 = (helpRedNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = redTrack[helpRedNow1];
                                     helpRedNow1 = (helpRedNow1 + resultDice);
                                     redNow1 = redTrack[helpRedNow1];
                                     redAddList(n, redNow1);
-                                    if(helpRedNow1==57){
+                                    if (helpRedNow1 == 57) {
                                         idxWinRed += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     redpionplace2.setBackground(Color.white);
                                     place2.setBackground(Color.red);
                                     redStart2 = false;
@@ -2182,8 +2198,8 @@ public class layout extends javax.swing.JFrame {
                         }
                         break;
                     case 1:
-                        if(greenStart1==false && greenStart2==false){
-                            if(helpGreenNow2==0){
+                        if (greenStart1 == false && greenStart2 == false) {
+                            if (helpGreenNow2 == 0) {
                                 helpGreenNow2 = resultDice;
                                 greenNow2 = greenTrack[helpGreenNow2];
                                 place15.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2191,7 +2207,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         greenSetBg(greenNow2);
                                         whiteSetBg("place15");
@@ -2200,26 +2216,28 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpGreenNow1 + resultDice);
                                 int n2 = (helpGreenNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = greenTrack[helpGreenNow1];
                                     helpGreenNow1 = (helpGreenNow1 + resultDice);
                                     greenNow1 = greenTrack[helpGreenNow1];
                                     greenAddList(n, greenNow1);
-                                    if(helpGreenNow1==57){
+                                    if (helpGreenNow1 == 57) {
                                         idxWinGreen += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     String n = greenTrack[helpGreenNow2];
                                     helpGreenNow2 = (helpGreenNow2 + resultDice);
                                     greenNow2 = greenTrack[helpGreenNow2];
                                     greenAddList(n, greenNow2);
-                                    if(helpGreenNow2==57){
+                                    if (helpGreenNow2 == 57) {
                                         idxWinGreen += 1;
+                                        win();
                                     }
                                 }
                             }
-                        } else if (greenStart1==false){
-                            if(helpGreenNow1==0){
+                        } else if (greenStart1 == false) {
+                            if (helpGreenNow1 == 0) {
                                 helpGreenNow1 = resultDice;
                                 greenNow1 = greenTrack[helpGreenNow1];
                                 place15.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2227,7 +2245,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         greenSetBg(greenNow1);
                                         whiteSetBg("place15");
@@ -2236,15 +2254,17 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpGreenNow1 + resultDice);
                                 int n2 = (helpGreenNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = greenTrack[helpGreenNow1];
                                     helpGreenNow1 = (helpGreenNow1 + resultDice);
                                     greenNow1 = greenTrack[helpGreenNow1];
                                     greenAddList(n, greenNow1);
-                                    if(helpGreenNow1==57){
+                                    if (helpGreenNow1 == 57) {
                                         idxWinGreen += 1;
+                                        win();
+
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     greenpionplace2.setBackground(Color.white);
                                     place15.setBackground(Color.green);
                                     greenStart2 = false;
@@ -2253,8 +2273,8 @@ public class layout extends javax.swing.JFrame {
                         }
                         break;
                     case 2:
-                        if(yellowStart1==false && yellowStart2==false){
-                            if(helpYellowNow2==0){
+                        if (yellowStart1 == false && yellowStart2 == false) {
+                            if (helpYellowNow2 == 0) {
                                 helpYellowNow2 = resultDice;
                                 yellowNow2 = yellowTrack[helpYellowNow2];
                                 place28.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2262,7 +2282,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         yellowSetBg(yellowNow2);
                                         whiteSetBg("place28");
@@ -2271,26 +2291,28 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpYellowNow1 + resultDice);
                                 int n2 = (helpYellowNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = yellowTrack[helpYellowNow1];
                                     helpYellowNow1 = (helpYellowNow1 + resultDice);
                                     yellowNow1 = yellowTrack[helpYellowNow1];
                                     yellowAddList(n, yellowNow1);
-                                    if(helpYellowNow1==57){
+                                    if (helpYellowNow1 == 57) {
                                         idxWinYellow += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     String n = yellowTrack[helpYellowNow2];
                                     helpYellowNow2 = (helpYellowNow2 + resultDice);
                                     yellowNow2 = yellowTrack[helpYellowNow2];
                                     yellowAddList(n, yellowNow2);
-                                    if(helpYellowNow2==57){
+                                    if (helpYellowNow2 == 57) {
                                         idxWinYellow += 1;
+                                        win();
                                     }
                                 }
                             }
-                        } else if (yellowStart1==false){
-                            if(helpYellowNow1==0){
+                        } else if (yellowStart1 == false) {
+                            if (helpYellowNow1 == 0) {
                                 helpYellowNow1 = resultDice;
                                 yellowNow1 = yellowTrack[helpYellowNow1];
                                 place28.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2298,7 +2320,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         yellowSetBg(yellowNow1);
                                         whiteSetBg("place28");
@@ -2307,15 +2329,16 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpYellowNow1 + resultDice);
                                 int n2 = (helpYellowNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = yellowTrack[helpYellowNow1];
                                     helpYellowNow1 = (helpYellowNow1 + resultDice);
                                     yellowNow1 = yellowTrack[helpYellowNow1];
                                     yellowAddList(n, yellowNow1);
-                                    if(helpYellowNow1==57){
+                                    if (helpYellowNow1 == 57) {
                                         idxWinYellow += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     yellowpionplace2.setBackground(Color.white);
                                     place28.setBackground(Color.yellow);
                                     yellowStart2 = false;
@@ -2324,8 +2347,8 @@ public class layout extends javax.swing.JFrame {
                         }
                         break;
                     case 3:
-                        if(blueStart1==false && blueStart2==false){
-                            if(helpBlueNow2==0){
+                        if (blueStart1 == false && blueStart2 == false) {
+                            if (helpBlueNow2 == 0) {
                                 helpBlueNow2 = resultDice;
                                 blueNow2 = blueTrack[helpBlueNow2];
                                 place41.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2333,7 +2356,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         blueSetBg(blueNow2);
                                         whiteSetBg("place41");
@@ -2342,26 +2365,28 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpBlueNow1 + resultDice);
                                 int n2 = (helpBlueNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = blueTrack[helpBlueNow1];
                                     helpBlueNow1 = (helpBlueNow1 + resultDice);
                                     blueNow1 = blueTrack[helpBlueNow1];
                                     blueAddList(n, blueNow1);
-                                    if(helpBlueNow1==57){
+                                    if (helpBlueNow1 == 57) {
                                         idxWinBlue += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     String n = blueTrack[helpBlueNow2];
                                     helpBlueNow2 = (helpBlueNow2 + resultDice);
                                     blueNow2 = blueTrack[helpBlueNow2];
                                     blueAddList(n, blueNow2);
-                                    if(helpBlueNow2==57){
+                                    if (helpBlueNow2 == 57) {
                                         idxWinBlue += 1;
+                                        win();
                                     }
                                 }
                             }
-                        } else if (blueStart1==false){
-                            if(helpBlueNow1==0){
+                        } else if (blueStart1 == false) {
+                            if (helpBlueNow1 == 0) {
                                 helpBlueNow1 = resultDice;
                                 blueNow1 = blueTrack[helpBlueNow1];
                                 place41.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2369,7 +2394,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         blueSetBg(blueNow1);
                                         whiteSetBg("place41");
@@ -2378,15 +2403,16 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpBlueNow1 + resultDice);
                                 int n2 = (helpBlueNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = blueTrack[helpBlueNow1];
                                     helpBlueNow1 = (helpBlueNow1 + resultDice);
                                     blueNow1 = blueTrack[helpBlueNow1];
                                     blueAddList(n, blueNow1);
-                                    if(helpBlueNow1==57){
+                                    if (helpBlueNow1 == 57) {
                                         idxWinBlue += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     bluepionplace2.setBackground(Color.white);
                                     place41.setBackground(Color.blue);
                                     blueStart2 = false;
@@ -2395,13 +2421,13 @@ public class layout extends javax.swing.JFrame {
                         }
                         break;
                 }
-                
+
                 current = 0;
             } else {
-                switch (current){
+                switch (current) {
                     case 0:
-                        if(redStart1==false && redStart2==false){
-                            if(helpRedNow2==0){
+                        if (redStart1 == false && redStart2 == false) {
+                            if (helpRedNow2 == 0) {
                                 helpRedNow2 = resultDice;
                                 redNow2 = redTrack[helpRedNow2];
                                 place2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2409,7 +2435,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         redSetBg(redNow2);
                                         whiteSetBg("place2");
@@ -2418,26 +2444,28 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpRedNow1 + resultDice);
                                 int n2 = (helpRedNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = redTrack[helpRedNow1];
                                     helpRedNow1 = (helpRedNow1 + resultDice);
                                     redNow1 = redTrack[helpRedNow1];
                                     redAddList(n, redNow1);
-                                    if(helpRedNow1==57){
+                                    if (helpRedNow1 == 57) {
                                         idxWinRed += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     String n = redTrack[helpRedNow2];
                                     helpRedNow2 = (helpRedNow2 + resultDice);
                                     redNow2 = redTrack[helpRedNow2];
                                     redAddList(n, redNow2);
-                                    if(helpRedNow2==57){
+                                    if (helpRedNow2 == 57) {
                                         idxWinRed += 1;
+                                        win();
                                     }
                                 }
                             }
-                        } else if (redStart1==false){
-                            if(helpRedNow1==0){
+                        } else if (redStart1 == false) {
+                            if (helpRedNow1 == 0) {
                                 helpRedNow1 = resultDice;
                                 redNow1 = redTrack[helpRedNow1];
                                 place2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2445,7 +2473,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         redSetBg(redNow1);
                                         whiteSetBg("place2");
@@ -2454,15 +2482,16 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpRedNow1 + resultDice);
                                 int n2 = (helpRedNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = redTrack[helpRedNow1];
                                     helpRedNow1 = (helpRedNow1 + resultDice);
                                     redNow1 = redTrack[helpRedNow1];
                                     redAddList(n, redNow1);
-                                    if(helpRedNow1==57){
+                                    if (helpRedNow1 == 57) {
                                         idxWinRed += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     redpionplace2.setBackground(Color.white);
                                     place2.setBackground(Color.red);
                                     redStart2 = false;
@@ -2471,8 +2500,8 @@ public class layout extends javax.swing.JFrame {
                         }
                         break;
                     case 1:
-                        if(greenStart1==false && greenStart2==false){
-                            if(helpGreenNow2==0){
+                        if (greenStart1 == false && greenStart2 == false) {
+                            if (helpGreenNow2 == 0) {
                                 helpGreenNow2 = resultDice;
                                 greenNow2 = greenTrack[helpGreenNow2];
                                 place15.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2480,7 +2509,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         greenSetBg(greenNow2);
                                         whiteSetBg("place15");
@@ -2489,26 +2518,28 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpGreenNow1 + resultDice);
                                 int n2 = (helpGreenNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = greenTrack[helpGreenNow1];
                                     helpGreenNow1 = (helpGreenNow1 + resultDice);
                                     greenNow1 = greenTrack[helpGreenNow1];
                                     greenAddList(n, greenNow1);
-                                    if(helpGreenNow1==57){
+                                    if (helpGreenNow1 == 57) {
                                         idxWinGreen += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     String n = greenTrack[helpGreenNow2];
                                     helpGreenNow2 = (helpGreenNow2 + resultDice);
                                     greenNow2 = greenTrack[helpGreenNow2];
                                     greenAddList(n, greenNow2);
-                                    if(helpGreenNow2==57){
+                                    if (helpGreenNow2 == 57) {
                                         idxWinGreen += 1;
+                                        win();
                                     }
                                 }
                             }
-                        } else if (greenStart1==false){
-                            if(helpGreenNow1==0){
+                        } else if (greenStart1 == false) {
+                            if (helpGreenNow1 == 0) {
                                 helpGreenNow1 = resultDice;
                                 greenNow1 = greenTrack[helpGreenNow1];
                                 place15.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2516,7 +2547,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         greenSetBg(greenNow1);
                                         whiteSetBg("place15");
@@ -2525,15 +2556,16 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpGreenNow1 + resultDice);
                                 int n2 = (helpGreenNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = greenTrack[helpGreenNow1];
                                     helpGreenNow1 = (helpGreenNow1 + resultDice);
                                     greenNow1 = greenTrack[helpGreenNow1];
                                     greenAddList(n, greenNow1);
-                                    if(helpGreenNow1==57){
+                                    if (helpGreenNow1 == 57) {
                                         idxWinGreen += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     greenpionplace2.setBackground(Color.white);
                                     place15.setBackground(Color.green);
                                     greenStart2 = false;
@@ -2542,8 +2574,8 @@ public class layout extends javax.swing.JFrame {
                         }
                         break;
                     case 2:
-                        if(yellowStart1==false && yellowStart2==false){
-                            if(helpYellowNow2==0){
+                        if (yellowStart1 == false && yellowStart2 == false) {
+                            if (helpYellowNow2 == 0) {
                                 helpYellowNow2 = resultDice;
                                 yellowNow2 = yellowTrack[helpYellowNow2];
                                 place28.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2551,7 +2583,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         yellowSetBg(yellowNow2);
                                         whiteSetBg("place28");
@@ -2560,26 +2592,28 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpYellowNow1 + resultDice);
                                 int n2 = (helpYellowNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = yellowTrack[helpYellowNow1];
                                     helpYellowNow1 = (helpYellowNow1 + resultDice);
                                     yellowNow1 = yellowTrack[helpYellowNow1];
                                     yellowAddList(n, yellowNow1);
-                                    if(helpYellowNow1==57){
+                                    if (helpYellowNow1 == 57) {
                                         idxWinYellow += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     String n = yellowTrack[helpYellowNow2];
                                     helpYellowNow2 = (helpYellowNow2 + resultDice);
                                     yellowNow2 = yellowTrack[helpYellowNow2];
                                     yellowAddList(n, yellowNow2);
-                                    if(helpYellowNow2==57){
+                                    if (helpYellowNow2 == 57) {
                                         idxWinYellow += 1;
+                                        win();
                                     }
                                 }
                             }
-                        } else if (yellowStart1==false){
-                            if(helpYellowNow1==0){
+                        } else if (yellowStart1 == false) {
+                            if (helpYellowNow1 == 0) {
                                 helpYellowNow1 = resultDice;
                                 yellowNow1 = yellowTrack[helpYellowNow1];
                                 place28.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2587,7 +2621,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         yellowSetBg(yellowNow1);
                                         whiteSetBg("place28");
@@ -2596,15 +2630,16 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpYellowNow1 + resultDice);
                                 int n2 = (helpYellowNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = yellowTrack[helpYellowNow1];
                                     helpYellowNow1 = (helpYellowNow1 + resultDice);
                                     yellowNow1 = yellowTrack[helpYellowNow1];
                                     yellowAddList(n, yellowNow1);
-                                    if(helpYellowNow1==57){
+                                    if (helpYellowNow1 == 57) {
                                         idxWinYellow += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     yellowpionplace2.setBackground(Color.white);
                                     place28.setBackground(Color.yellow);
                                     yellowStart2 = false;
@@ -2613,8 +2648,8 @@ public class layout extends javax.swing.JFrame {
                         }
                         break;
                     case 3:
-                        if(blueStart1==false && blueStart2==false){
-                            if(helpBlueNow2==0){
+                        if (blueStart1 == false && blueStart2 == false) {
+                            if (helpBlueNow2 == 0) {
                                 helpBlueNow2 = resultDice;
                                 blueNow2 = blueTrack[helpBlueNow2];
                                 place41.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2622,7 +2657,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         blueSetBg(blueNow2);
                                         whiteSetBg("place41");
@@ -2631,26 +2666,27 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpBlueNow1 + resultDice);
                                 int n2 = (helpBlueNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = blueTrack[helpBlueNow1];
                                     helpBlueNow1 = (helpBlueNow1 + resultDice);
                                     blueNow1 = blueTrack[helpBlueNow1];
                                     blueAddList(n, blueNow1);
-                                    if(helpBlueNow1==57){
+                                    if (helpBlueNow1 == 57) {
                                         idxWinBlue += 1;
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     String n = blueTrack[helpBlueNow2];
                                     helpBlueNow2 = (helpBlueNow2 + resultDice);
                                     blueNow2 = blueTrack[helpBlueNow2];
                                     blueAddList(n, blueNow2);
-                                    if(helpBlueNow2==57){
+                                    if (helpBlueNow2 == 57) {
                                         idxWinBlue += 1;
+                                        win();
                                     }
                                 }
                             }
-                        } else if (blueStart1==false){
-                            if(helpBlueNow1==0){
+                        } else if (blueStart1 == false) {
+                            if (helpBlueNow1 == 0) {
                                 helpBlueNow1 = resultDice;
                                 blueNow1 = blueTrack[helpBlueNow1];
                                 place41.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2658,7 +2694,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         blueSetBg(blueNow1);
                                         whiteSetBg("place41");
@@ -2667,15 +2703,16 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpBlueNow1 + resultDice);
                                 int n2 = (helpBlueNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = blueTrack[helpBlueNow1];
                                     helpBlueNow1 = (helpBlueNow1 + resultDice);
                                     blueNow1 = blueTrack[helpBlueNow1];
                                     blueAddList(n, blueNow1);
-                                    if(helpBlueNow1==57){
+                                    if (helpBlueNow1 == 57) {
                                         idxWinBlue += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     bluepionplace2.setBackground(Color.white);
                                     place41.setBackground(Color.blue);
                                     blueStart2 = false;
@@ -2684,15 +2721,15 @@ public class layout extends javax.swing.JFrame {
                         }
                         break;
                 }
-                
-                current+=1;
+
+                current += 1;
             }
         } else {
             current = current;
-            
-            switch (current){
+
+            switch (current) {
                 case 0:
-                    if(redStart1==true){
+                    if (redStart1 == true) {
                         redpionplace1.setBackground(Color.white);
                         //place2.setBorder(BorderFactory.createLineBorder(Color.red));
                         place2.setBackground(Color.red);
@@ -2703,8 +2740,8 @@ public class layout extends javax.swing.JFrame {
 //                        place2.setBackground(Color.red);
 //                        redStart2 = false;
                     } else {
-                        if(redStart1==false && redStart2==false){
-                            if(helpRedNow2==0){
+                        if (redStart1 == false && redStart2 == false) {
+                            if (helpRedNow2 == 0) {
                                 helpRedNow2 = resultDice;
                                 redNow2 = redTrack[helpRedNow2];
                                 place2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2712,7 +2749,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         redSetBg(redNow2);
                                         whiteSetBg("place2");
@@ -2721,26 +2758,28 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpRedNow1 + resultDice);
                                 int n2 = (helpRedNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = redTrack[helpRedNow1];
                                     helpRedNow1 = (helpRedNow1 + resultDice);
                                     redNow1 = redTrack[helpRedNow1];
                                     redAddList(n, redNow1);
-                                    if(helpRedNow1==57){
+                                    if (helpRedNow1 == 57) {
                                         idxWinRed += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     String n = redTrack[helpRedNow2];
                                     helpRedNow2 = (helpRedNow2 + resultDice);
                                     redNow2 = redTrack[helpRedNow2];
                                     redAddList(n, redNow2);
-                                    if(helpRedNow2==57){
+                                    if (helpRedNow2 == 57) {
                                         idxWinRed += 1;
+                                        win();
                                     }
                                 }
                             }
-                        } else if (redStart1==false){
-                            if(helpRedNow1==0){
+                        } else if (redStart1 == false) {
+                            if (helpRedNow1 == 0) {
                                 helpRedNow1 = resultDice;
                                 redNow1 = redTrack[helpRedNow1];
                                 place2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2748,7 +2787,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         redSetBg(redNow1);
                                         whiteSetBg("place2");
@@ -2757,15 +2796,16 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpRedNow1 + resultDice);
                                 int n2 = (helpRedNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = redTrack[helpRedNow1];
                                     helpRedNow1 = (helpRedNow1 + resultDice);
                                     redNow1 = redTrack[helpRedNow1];
                                     redAddList(n, redNow1);
-                                    if(helpRedNow1==57){
+                                    if (helpRedNow1 == 57) {
                                         idxWinRed += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     redpionplace2.setBackground(Color.white);
                                     place2.setBackground(Color.red);
                                     redStart2 = false;
@@ -2775,7 +2815,7 @@ public class layout extends javax.swing.JFrame {
                     }
                     break;
                 case 1:
-                    if(greenStart1==true){
+                    if (greenStart1 == true) {
                         greenpionplace1.setBackground(Color.white);
                         //place15.setBorder(BorderFactory.createLineBorder(Color.green));
                         place15.setBackground(Color.green);
@@ -2786,8 +2826,8 @@ public class layout extends javax.swing.JFrame {
 //                        place15.setBackground(Color.green);
 //                        greenStart2 = false;
                     } else {
-                        if(greenStart1==false && greenStart2==false){
-                            if(helpGreenNow2==0){
+                        if (greenStart1 == false && greenStart2 == false) {
+                            if (helpGreenNow2 == 0) {
                                 helpGreenNow2 = resultDice;
                                 greenNow2 = greenTrack[helpGreenNow2];
                                 place15.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2795,7 +2835,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         greenSetBg(greenNow2);
                                         whiteSetBg("place15");
@@ -2804,26 +2844,28 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpGreenNow1 + resultDice);
                                 int n2 = (helpGreenNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = greenTrack[helpGreenNow1];
                                     helpGreenNow1 = (helpGreenNow1 + resultDice);
                                     greenNow1 = greenTrack[helpGreenNow1];
                                     greenAddList(n, greenNow1);
-                                    if(helpGreenNow1==57){
+                                    if (helpGreenNow1 == 57) {
                                         idxWinGreen += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     String n = greenTrack[helpGreenNow2];
                                     helpGreenNow2 = (helpGreenNow2 + resultDice);
                                     greenNow2 = greenTrack[helpGreenNow2];
                                     greenAddList(n, greenNow2);
-                                    if(helpGreenNow2==57){
+                                    if (helpGreenNow2 == 57) {
                                         idxWinGreen += 1;
+                                        win();
                                     }
                                 }
                             }
-                        } else if (greenStart1==false){
-                            if(helpGreenNow1==0){
+                        } else if (greenStart1 == false) {
+                            if (helpGreenNow1 == 0) {
                                 helpGreenNow1 = resultDice;
                                 greenNow1 = greenTrack[helpGreenNow1];
                                 place15.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2831,7 +2873,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         greenSetBg(greenNow1);
                                         whiteSetBg("place15");
@@ -2840,15 +2882,16 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpGreenNow1 + resultDice);
                                 int n2 = (helpGreenNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = greenTrack[helpGreenNow1];
                                     helpGreenNow1 = (helpGreenNow1 + resultDice);
                                     greenNow1 = greenTrack[helpGreenNow1];
                                     greenAddList(n, greenNow1);
-                                    if(helpGreenNow1==57){
+                                    if (helpGreenNow1 == 57) {
                                         idxWinGreen += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     greenpionplace2.setBackground(Color.white);
                                     place15.setBackground(Color.green);
                                     greenStart2 = false;
@@ -2858,7 +2901,7 @@ public class layout extends javax.swing.JFrame {
                     }
                     break;
                 case 2:
-                    if(yellowStart1==true){
+                    if (yellowStart1 == true) {
                         yellowpionplace1.setBackground(Color.white);
                         //place28.setBorder(BorderFactory.createLineBorder(Color.yellow));
                         place28.setBackground(Color.yellow);
@@ -2869,8 +2912,8 @@ public class layout extends javax.swing.JFrame {
 //                        place28.setBackground(Color.yellow);
 //                        yellowStart2 = false;
                     } else {
-                        if(yellowStart1==false && yellowStart2==false){
-                            if(helpYellowNow2==0){
+                        if (yellowStart1 == false && yellowStart2 == false) {
+                            if (helpYellowNow2 == 0) {
                                 helpYellowNow2 = resultDice;
                                 yellowNow2 = yellowTrack[helpYellowNow2];
                                 place28.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2878,7 +2921,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         yellowSetBg(yellowNow2);
                                         whiteSetBg("place28");
@@ -2887,26 +2930,28 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpYellowNow1 + resultDice);
                                 int n2 = (helpYellowNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = yellowTrack[helpYellowNow1];
                                     helpYellowNow1 = (helpYellowNow1 + resultDice);
                                     yellowNow1 = yellowTrack[helpYellowNow1];
                                     yellowAddList(n, yellowNow1);
-                                    if(helpYellowNow1==57){
+                                    if (helpYellowNow1 == 57) {
                                         idxWinYellow += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     String n = yellowTrack[helpYellowNow2];
                                     helpYellowNow2 = (helpYellowNow2 + resultDice);
                                     yellowNow2 = yellowTrack[helpYellowNow2];
                                     yellowAddList(n, yellowNow2);
-                                    if(helpYellowNow2==57){
+                                    if (helpYellowNow2 == 57) {
                                         idxWinYellow += 1;
+                                        win();
                                     }
                                 }
                             }
-                        } else if (yellowStart1==false){
-                            if(helpYellowNow1==0){
+                        } else if (yellowStart1 == false) {
+                            if (helpYellowNow1 == 0) {
                                 helpYellowNow1 = resultDice;
                                 yellowNow1 = yellowTrack[helpYellowNow1];
                                 place28.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2914,7 +2959,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         yellowSetBg(yellowNow1);
                                         whiteSetBg("place28");
@@ -2923,15 +2968,16 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpYellowNow1 + resultDice);
                                 int n2 = (helpYellowNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = yellowTrack[helpYellowNow1];
                                     helpYellowNow1 = (helpYellowNow1 + resultDice);
                                     yellowNow1 = yellowTrack[helpYellowNow1];
                                     yellowAddList(n, yellowNow1);
-                                    if(helpYellowNow1==57){
+                                    if (helpYellowNow1 == 57) {
                                         idxWinYellow += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     yellowpionplace2.setBackground(Color.white);
                                     place28.setBackground(Color.yellow);
                                     yellowStart2 = false;
@@ -2941,7 +2987,7 @@ public class layout extends javax.swing.JFrame {
                     }
                     break;
                 case 3:
-                    if(blueStart1==true){
+                    if (blueStart1 == true) {
                         bluepionplace1.setBackground(Color.white);
                         //place41.setBorder(BorderFactory.createLineBorder(Color.blue));
                         place41.setBackground(Color.blue);
@@ -2952,8 +2998,8 @@ public class layout extends javax.swing.JFrame {
 //                        place41.setBackground(Color.blue);
 //                        blueStart2 = false;
                     } else {
-                        if(blueStart1==false && blueStart2==false){
-                            if(helpBlueNow2==0){
+                        if (blueStart1 == false && blueStart2 == false) {
+                            if (helpBlueNow2 == 0) {
                                 helpBlueNow2 = resultDice;
                                 blueNow2 = blueTrack[helpBlueNow2];
                                 place41.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2961,7 +3007,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         blueSetBg(blueNow2);
                                         whiteSetBg("place41");
@@ -2970,26 +3016,27 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpBlueNow1 + resultDice);
                                 int n2 = (helpBlueNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = blueTrack[helpBlueNow1];
                                     helpBlueNow1 = (helpBlueNow1 + resultDice);
                                     blueNow1 = blueTrack[helpBlueNow1];
                                     blueAddList(n, blueNow1);
-                                    if(helpBlueNow1==57){
+                                    if (helpBlueNow1 == 57) {
                                         idxWinBlue += 1;
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     String n = blueTrack[helpBlueNow2];
                                     helpBlueNow2 = (helpBlueNow2 + resultDice);
                                     blueNow2 = blueTrack[helpBlueNow2];
                                     blueAddList(n, blueNow2);
-                                    if(helpBlueNow2==57){
+                                    if (helpBlueNow2 == 57) {
                                         idxWinBlue += 1;
+                                        win();
                                     }
                                 }
                             }
-                        } else if (blueStart1==false){
-                            if(helpBlueNow1==0){
+                        } else if (blueStart1 == false) {
+                            if (helpBlueNow1 == 0) {
                                 helpBlueNow1 = resultDice;
                                 blueNow1 = blueTrack[helpBlueNow1];
                                 place41.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2997,7 +3044,7 @@ public class layout extends javax.swing.JFrame {
                                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                                         placeMouseClicked(evt);
                                     }
-                                    
+
                                     private void placeMouseClicked(MouseEvent evt) {
                                         blueSetBg(blueNow1);
                                         whiteSetBg("place41");
@@ -3006,15 +3053,16 @@ public class layout extends javax.swing.JFrame {
                             } else {
                                 int n1 = (helpBlueNow1 + resultDice);
                                 int n2 = (helpBlueNow2 + resultDice);
-                                if(n1<=57){
+                                if (n1 <= 57) {
                                     String n = blueTrack[helpBlueNow1];
                                     helpBlueNow1 = (helpBlueNow1 + resultDice);
                                     blueNow1 = blueTrack[helpBlueNow1];
                                     blueAddList(n, blueNow1);
-                                    if(helpBlueNow1==57){
+                                    if (helpBlueNow1 == 57) {
                                         idxWinBlue += 1;
+                                        win();
                                     }
-                                } else if(n2<=57){
+                                } else if (n2 <= 57) {
                                     bluepionplace2.setBackground(Color.white);
                                     place41.setBackground(Color.blue);
                                     blueStart2 = false;
@@ -3025,17 +3073,17 @@ public class layout extends javax.swing.JFrame {
                     break;
             }
         }
-        
+
         System.out.println(currentPlayer[current]);
-        
-        switch (current){
+
+        switch (current) {
             case 0:
                 redLabel.setVisible(true);
                 greenLabel.setVisible(false);
                 yellowLabel.setVisible(false);
                 blueLabel.setVisible(false);
-                
-                if (resultDice==6){
+
+                if (resultDice == 6) {
                     redMv.setVisible(true);
                     greenMv.setVisible(false);
                     yellowMv.setVisible(false);
@@ -3046,15 +3094,15 @@ public class layout extends javax.swing.JFrame {
                     yellowMv.setVisible(false);
                     blueMv.setVisible(true);
                 }
-                
+
                 break;
             case 1:
                 redLabel.setVisible(false);
                 greenLabel.setVisible(true);
                 yellowLabel.setVisible(false);
                 blueLabel.setVisible(false);
-                
-                if (resultDice==6){
+
+                if (resultDice == 6) {
                     redMv.setVisible(false);
                     greenMv.setVisible(true);
                     yellowMv.setVisible(false);
@@ -3065,14 +3113,14 @@ public class layout extends javax.swing.JFrame {
                     yellowMv.setVisible(false);
                     blueMv.setVisible(false);
                 }
-                    break;
+                break;
             case 2:
                 redLabel.setVisible(false);
                 greenLabel.setVisible(false);
                 yellowLabel.setVisible(true);
                 blueLabel.setVisible(false);
-                
-                if (resultDice==6){
+
+                if (resultDice == 6) {
                     redMv.setVisible(false);
                     greenMv.setVisible(false);
                     yellowMv.setVisible(true);
@@ -3089,8 +3137,8 @@ public class layout extends javax.swing.JFrame {
                 greenLabel.setVisible(false);
                 yellowLabel.setVisible(false);
                 blueLabel.setVisible(true);
-                
-                if (resultDice==6){
+
+                if (resultDice == 6) {
                     redMv.setVisible(false);
                     greenMv.setVisible(false);
                     yellowMv.setVisible(false);
@@ -3138,10 +3186,10 @@ public class layout extends javax.swing.JFrame {
                 new LANMenu().setVisible(true);
             }
         });
+
     }
-    
-    
-    public void redSetBg(String name){
+
+    public void redSetBg(String name) {
         switch (name) {
             case "place1":
                 place1.setBackground(Color.red);
@@ -3319,8 +3367,8 @@ public class layout extends javax.swing.JFrame {
                 break;
         }
     }
-    
-    public void greenSetBg(String name){
+
+    public void greenSetBg(String name) {
         switch (name) {
             case "place1":
                 place1.setBackground(Color.green);
@@ -3498,8 +3546,8 @@ public class layout extends javax.swing.JFrame {
                 break;
         }
     }
-    
-    public void yellowSetBg(String name){
+
+    public void yellowSetBg(String name) {
         switch (name) {
             case "place1":
                 place1.setBackground(Color.yellow);
@@ -3677,8 +3725,8 @@ public class layout extends javax.swing.JFrame {
                 break;
         }
     }
-    
-    public void blueSetBg(String name){
+
+    public void blueSetBg(String name) {
         switch (name) {
             case "place1":
                 place1.setBackground(Color.blue);
@@ -3856,8 +3904,8 @@ public class layout extends javax.swing.JFrame {
                 break;
         }
     }
-    
-    public void whiteSetBg(String name){
+
+    public void whiteSetBg(String name) {
         switch (name) {
             case "place1":
                 place1.setBackground(Color.white);
@@ -4089,8 +4137,8 @@ public class layout extends javax.swing.JFrame {
                 break;
         }
     }
-    
-    public void redAddList(String name1, String name2){
+
+    public void redAddList(String name1, String name2) {
         switch (name1) {
             case "place1":
                 place1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -4098,700 +4146,758 @@ public class layout extends javax.swing.JFrame {
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place2":
                 place2.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place3":
                 place3.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place4":
                 place4.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place5":
                 place5.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place6":
                 place6.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place7":
                 place7.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place8":
                 place8.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place9":
                 place9.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place10":
                 place10.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place11":
                 place11.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place12":
                 place12.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place13":
                 place13.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place14":
                 place14.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place15":
                 place15.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place16":
                 place16.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place17":
                 place17.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place18":
                 place18.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place19":
                 place19.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place20":
                 place20.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place21":
                 place21.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place22":
                 place22.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place23":
                 place23.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place24":
                 place24.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place25":
                 place25.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place26":
                 place26.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place27":
                 place27.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place28":
                 place28.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place29":
                 place29.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place30":
                 place30.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place31":
                 place31.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place32":
                 place32.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place33":
                 place33.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place34":
                 place34.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place35":
                 place35.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place36":
                 place36.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place37":
                 place37.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place38":
                 place38.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place39":
                 place39.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place40":
                 place40.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place41":
                 place41.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place42":
                 place42.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place43":
                 place43.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place44":
                 place44.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place45":
                 place45.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place46":
                 place46.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place47":
                 place47.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place48":
                 place48.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place49":
                 place49.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place50":
                 place50.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place51":
                 place51.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place52":
                 place52.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "redplace1":
                 redplace1.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "redplace2":
                 redplace2.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "redplace3":
                 redplace3.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "redplace4":
                 redplace4.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "redplace5":
                 redplace5.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "redplace6":
                 redplace6.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         redSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
         }
     }
-    
-    public void greenAddList(String name1, String name2){
+
+    public void greenAddList(String name1, String name2) {
         switch (name1) {
             case "place1":
                 place1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -4799,700 +4905,758 @@ public class layout extends javax.swing.JFrame {
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place2":
                 place2.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place3":
                 place3.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place4":
                 place4.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place5":
                 place5.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place6":
                 place6.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place7":
                 place7.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place8":
                 place8.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place9":
                 place9.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place10":
                 place10.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place11":
                 place11.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place12":
                 place12.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place13":
                 place13.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place14":
                 place14.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place15":
                 place15.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place16":
                 place16.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place17":
                 place17.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place18":
                 place18.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place19":
                 place19.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place20":
                 place20.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place21":
                 place21.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place22":
                 place22.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place23":
                 place23.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place24":
                 place24.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place25":
                 place25.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place26":
                 place26.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place27":
                 place27.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place28":
                 place28.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place29":
                 place29.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place30":
                 place30.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place31":
                 place31.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place32":
                 place32.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place33":
                 place33.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place34":
                 place34.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place35":
                 place35.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place36":
                 place36.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place37":
                 place37.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place38":
                 place38.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place39":
                 place39.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place40":
                 place40.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place41":
                 place41.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place42":
                 place42.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place43":
                 place43.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place44":
                 place44.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place45":
                 place45.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place46":
                 place46.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place47":
                 place47.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place48":
                 place48.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place49":
                 place49.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place50":
                 place50.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place51":
                 place51.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place52":
                 place52.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "greenplace1":
                 greenplace1.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "greenplace2":
                 greenplace2.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "greenplace3":
                 greenplace3.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "greenplace4":
                 greenplace4.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "greenplace5":
                 greenplace5.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "greenplace6":
                 greenplace6.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         greenSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
         }
     }
-    
-    public void yellowAddList(String name1, String name2){
+
+    public void yellowAddList(String name1, String name2) {
         switch (name1) {
             case "place1":
                 place1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -5500,700 +5664,758 @@ public class layout extends javax.swing.JFrame {
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place2":
                 place2.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place3":
                 place3.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place4":
                 place4.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place5":
                 place5.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place6":
                 place6.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place7":
                 place7.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place8":
                 place8.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place9":
                 place9.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place10":
                 place10.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place11":
                 place11.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place12":
                 place12.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place13":
                 place13.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place14":
                 place14.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place15":
                 place15.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place16":
                 place16.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place17":
                 place17.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place18":
                 place18.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place19":
                 place19.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place20":
                 place20.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place21":
                 place21.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place22":
                 place22.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place23":
                 place23.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place24":
                 place24.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place25":
                 place25.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place26":
                 place26.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place27":
                 place27.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place28":
                 place28.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place29":
                 place29.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place30":
                 place30.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place31":
                 place31.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place32":
                 place32.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place33":
                 place33.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place34":
                 place34.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place35":
                 place35.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place36":
                 place36.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place37":
                 place37.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place38":
                 place38.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place39":
                 place39.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place40":
                 place40.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place41":
                 place41.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place42":
                 place42.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place43":
                 place43.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place44":
                 place44.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place45":
                 place45.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place46":
                 place46.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place47":
                 place47.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place48":
                 place48.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place49":
                 place49.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place50":
                 place50.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place51":
                 place51.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place52":
                 place52.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "yellowplace1":
                 yellowplace1.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "yellowplace2":
                 yellowplace2.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "yellowplace3":
                 yellowplace3.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "yellowplace4":
                 yellowplace4.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "yellowplace5":
                 yellowplace5.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "yellowplace6":
                 yellowplace6.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         yellowSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
         }
     }
-    
-    public void blueAddList(String name1, String name2){
+
+    public void blueAddList(String name1, String name2) {
         switch (name1) {
             case "place1":
                 place1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -6201,696 +6423,754 @@ public class layout extends javax.swing.JFrame {
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place2":
                 place2.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place3":
                 place3.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place4":
                 place4.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place5":
                 place5.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place6":
                 place6.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place7":
                 place7.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place8":
                 place8.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place9":
                 place9.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place10":
                 place10.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place11":
                 place11.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place12":
                 place12.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place13":
                 place13.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place14":
                 place14.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place15":
                 place15.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place16":
                 place16.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place17":
                 place17.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place18":
                 place18.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place19":
                 place19.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place20":
                 place20.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place21":
                 place21.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place22":
                 place22.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place23":
                 place23.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place24":
                 place24.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place25":
                 place25.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place26":
                 place26.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place27":
                 place27.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place28":
                 place28.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place29":
                 place29.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place30":
                 place30.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place31":
                 place31.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place32":
                 place32.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place33":
                 place33.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place34":
                 place34.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place35":
                 place35.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place36":
                 place36.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place37":
                 place37.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place38":
                 place38.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place39":
                 place39.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place40":
                 place40.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place41":
                 place41.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place42":
                 place42.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place43":
                 place43.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place44":
                 place44.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place45":
                 place45.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place46":
                 place46.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place47":
                 place47.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place48":
                 place48.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place49":
                 place49.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place50":
                 place50.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place51":
                 place51.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "place52":
                 place52.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "blueplace1":
                 blueplace1.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "blueplace2":
                 blueplace2.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "blueplace3":
                 blueplace3.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "blueplace4":
                 blueplace4.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "blueplace5":
                 blueplace5.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
             case "blueplace6":
                 blueplace6.addMouseListener(new java.awt.event.MouseAdapter() {
                     @Override
                     public void mouseClicked(java.awt.event.MouseEvent evt) {
                         placeMouseClicked(evt);
                     }
-                    
+
                     private void placeMouseClicked(MouseEvent evt) {
                         blueSetBg(name2);
                         whiteSetBg(name1);
                     }
-                }); break;
+                });
+                break;
         }
     }
 
