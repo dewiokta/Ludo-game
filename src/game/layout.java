@@ -2119,7 +2119,7 @@ public class layout extends javax.swing.JFrame {
         // TODO add your handling code here:
         resultDice = random.getRandom(1, 6);
         diceplace.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dice" + resultDice + ".png")));
-
+  
         if (resultDice != 6) {
             if (current == (currentPlayer.length - 1)) {
                 switch (current) {
@@ -3189,162 +3189,574 @@ public class layout extends javax.swing.JFrame {
 
     }
 
+    public void kickRed(){
+        if (redStart1 == false){
+            redpionplace1.setBackground(Color.red);
+            redStart1 = true;
+            helpRedNow1 = 0;
+        } else if (redStart2 == false){
+            redpionplace2.setBackground(Color.red);
+            redStart2 = true;
+            helpRedNow2 = 0;
+        }
+    }
+    
+    public void kickGreen(){
+        if (greenStart1 == false){
+            greenpionplace1.setBackground(Color.green);
+            greenStart1 = true;
+            helpGreenNow1 = 0;
+        } else if (greenStart2 == false){
+            greenpionplace2.setBackground(Color.green);
+            greenStart2 = true;
+            helpGreenNow2 = 0;
+        }
+    }
+    
+    public void kickYellow(){
+        if (yellowStart1 == false){
+            yellowpionplace1.setBackground(Color.yellow);
+            yellowStart1 = true;
+            helpYellowNow1 = 0;
+        } else if (yellowStart2 == false){
+            yellowpionplace2.setBackground(Color.yellow);
+            yellowStart2 = true;
+            helpYellowNow2 = 0;
+        }
+    }
+    
+    public void kickBlue(){
+        if (blueStart1 == false){
+            bluepionplace1.setBackground(Color.blue);
+            blueStart1 = true;
+            helpBlueNow1 = 0;
+        } else if (blueStart2 == false){
+            bluepionplace2.setBackground(Color.blue);
+            blueStart2 = true;
+            helpBlueNow2 = 0;
+        }
+    }
+    
     public void redSetBg(String name) {
         switch (name) {
             case "place1":
+                if (place1.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place1.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place1.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place1.setBackground(Color.red);
                 break;
             case "place2":
+                if (place2.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place2.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place2.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place2.setBackground(Color.red);
                 break;
             case "place3":
+                if (place3.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place3.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place3.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place3.setBackground(Color.red);
                 break;
             case "place4":
+                if (place4.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place4.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place4.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place4.setBackground(Color.red);
                 break;
             case "place5":
+                if (place5.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place5.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place5.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place5.setBackground(Color.red);
                 break;
             case "place6":
+                if (place6.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place6.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place6.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place6.setBackground(Color.red);
                 break;
             case "place7":
+                if (place7.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place7.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place7.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place7.setBackground(Color.red);
                 break;
             case "place8":
+                if (place8.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place8.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place8.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place8.setBackground(Color.red);
                 break;
             case "place9":
+                if (place9.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place9.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place9.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place9.setBackground(Color.red);
                 break;
             case "place10":
+                if (place10.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place10.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place10.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place10.setBackground(Color.red);
                 break;
             case "place11":
+                if (place11.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place11.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place11.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place11.setBackground(Color.red);
                 break;
             case "place12":
+                if (place12.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place12.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place12.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place12.setBackground(Color.red);
                 break;
             case "place13":
+                if (place13.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place13.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place13.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place13.setBackground(Color.red);
                 break;
             case "place14":
+                if (place14.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place14.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place14.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place14.setBackground(Color.red);
                 break;
             case "place15":
+                if (place15.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place15.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place15.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place15.setBackground(Color.red);
                 break;
             case "place16":
+                if (place16.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place16.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place16.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place16.setBackground(Color.red);
                 break;
             case "place17":
+                if (place17.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place17.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place17.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place17.setBackground(Color.red);
                 break;
             case "place18":
+                if (place18.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place18.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place18.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place18.setBackground(Color.red);
                 break;
             case "place19":
+                if (place19.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place19.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place19.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place19.setBackground(Color.red);
                 break;
             case "place20":
+                if (place20.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place20.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place20.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place20.setBackground(Color.red);
                 break;
             case "place21":
+                if (place21.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place21.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place21.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place21.setBackground(Color.red);
                 break;
             case "place22":
+                if (place22.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place22.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place22.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place22.setBackground(Color.red);
                 break;
             case "place23":
+                if (place23.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place23.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place23.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place23.setBackground(Color.red);
                 break;
             case "place24":
+                if (place24.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place24.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place24.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place24.setBackground(Color.red);
                 break;
             case "place25":
+                if (place25.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place25.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place25.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place25.setBackground(Color.red);
                 break;
             case "place26":
+                if (place26.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place26.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place26.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place26.setBackground(Color.red);
                 break;
             case "place27":
+                if (place27.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place27.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place27.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place27.setBackground(Color.red);
                 break;
             case "place28":
+                if (place28.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place28.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place28.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place28.setBackground(Color.red);
                 break;
             case "place29":
+                if (place29.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place29.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place29.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place29.setBackground(Color.red);
                 break;
             case "place30":
+                if (place30.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place30.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place30.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place30.setBackground(Color.red);
                 break;
             case "place31":
+                if (place31.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place31.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place31.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place31.setBackground(Color.red);
                 break;
             case "place32":
+                if (place32.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place32.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place32.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place32.setBackground(Color.red);
                 break;
             case "place33":
+                if (place33.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place33.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place33.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place33.setBackground(Color.red);
                 break;
             case "place34":
+                if (place34.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place34.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place34.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place34.setBackground(Color.red);
                 break;
             case "place35":
+                if (place35.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place35.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place35.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place35.setBackground(Color.red);
                 break;
             case "place36":
+                if (place36.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place36.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place36.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place36.setBackground(Color.red);
                 break;
             case "place37":
+                if (place37.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place37.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place37.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place37.setBackground(Color.red);
                 break;
             case "place38":
+                if (place38.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place38.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place38.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place38.setBackground(Color.red);
                 break;
             case "place39":
+                if (place39.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place39.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place39.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place39.setBackground(Color.red);
                 break;
             case "place40":
+                if (place40.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place40.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place40.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place40.setBackground(Color.red);
                 break;
             case "place41":
+                if (place41.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place41.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place41.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place41.setBackground(Color.red);
                 break;
             case "place42":
+                if (place42.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place42.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place42.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place42.setBackground(Color.red);
                 break;
             case "place43":
+                if (place43.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place43.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place43.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place43.setBackground(Color.red);
                 break;
             case "place44":
+                if (place44.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place44.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place44.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place44.setBackground(Color.red);
                 break;
             case "place45":
+                if (place45.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place45.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place45.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place45.setBackground(Color.red);
                 break;
             case "place46":
+                if (place46.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place46.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place46.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place46.setBackground(Color.red);
                 break;
             case "place47":
+                if (place47.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place47.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place47.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place47.setBackground(Color.red);
                 break;
             case "place48":
+                if (place48.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place48.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place48.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place48.setBackground(Color.red);
                 break;
             case "place49":
+                if (place49.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place49.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place49.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place49.setBackground(Color.red);
                 break;
             case "place50":
+                if (place50.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place50.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place50.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place50.setBackground(Color.red);
                 break;
             case "place51":
+                if (place51.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place51.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place51.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place51.setBackground(Color.red);
                 break;
             case "place52":
+                if (place52.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place52.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place52.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place52.setBackground(Color.red);
                 break;
             case "redplace1":
@@ -3371,159 +3783,523 @@ public class layout extends javax.swing.JFrame {
     public void greenSetBg(String name) {
         switch (name) {
             case "place1":
+                if (place1.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place1.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place1.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place1.setBackground(Color.green);
                 break;
             case "place2":
+                if (place2.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place2.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place2.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place2.setBackground(Color.green);
                 break;
             case "place3":
+                if (place3.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place3.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place3.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place3.setBackground(Color.green);
                 break;
             case "place4":
+                if (place4.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place4.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place4.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place4.setBackground(Color.green);
                 break;
             case "place5":
+                if (place5.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place5.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place5.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place5.setBackground(Color.green);
                 break;
             case "place6":
+                if (place6.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place6.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place6.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place6.setBackground(Color.green);
                 break;
             case "place7":
+                if (place7.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place7.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place7.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place7.setBackground(Color.green);
                 break;
             case "place8":
+                if (place8.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place8.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place8.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place8.setBackground(Color.green);
                 break;
             case "place9":
+                if (place9.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place9.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place9.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place9.setBackground(Color.green);
                 break;
             case "place10":
+                if (place10.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place10.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place10.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place10.setBackground(Color.green);
                 break;
             case "place11":
+                if (place11.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place11.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place11.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place11.setBackground(Color.green);
                 break;
             case "place12":
+                if (place12.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place12.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place12.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place12.setBackground(Color.green);
                 break;
             case "place13":
+                if (place13.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place13.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place13.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place13.setBackground(Color.green);
                 break;
             case "place14":
+                if (place14.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place14.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place14.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place14.setBackground(Color.green);
                 break;
             case "place15":
+                if (place15.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place15.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place15.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place15.setBackground(Color.green);
                 break;
             case "place16":
+                if (place16.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place16.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place16.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place16.setBackground(Color.green);
                 break;
             case "place17":
+                if (place17.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place17.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place17.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place17.setBackground(Color.green);
                 break;
             case "place18":
+                if (place18.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place18.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place18.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place18.setBackground(Color.green);
                 break;
             case "place19":
+                if (place19.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place19.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place19.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place19.setBackground(Color.green);
                 break;
             case "place20":
+                if (place20.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place20.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place20.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place20.setBackground(Color.green);
                 break;
             case "place21":
+                if (place21.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place21.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place21.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place21.setBackground(Color.green);
                 break;
             case "place22":
+                if (place22.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place22.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place22.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place22.setBackground(Color.green);
                 break;
             case "place23":
+                if (place23.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place23.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place23.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place23.setBackground(Color.green);
                 break;
             case "place24":
+                if (place24.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place24.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place24.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place24.setBackground(Color.green);
                 break;
             case "place25":
+                if (place25.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place25.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place25.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place25.setBackground(Color.green);
                 break;
             case "place26":
+                if (place26.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place26.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place26.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place26.setBackground(Color.green);
                 break;
             case "place27":
+                if (place27.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place27.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place27.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place27.setBackground(Color.green);
                 break;
             case "place28":
+                if (place28.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place28.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place28.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place28.setBackground(Color.green);
                 break;
             case "place29":
+                if (place29.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place29.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place29.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place29.setBackground(Color.green);
                 break;
             case "place30":
+                if (place30.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place30.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place30.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place30.setBackground(Color.green);
                 break;
             case "place31":
+                if (place31.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place31.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place31.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place31.setBackground(Color.green);
                 break;
             case "place32":
+                if (place32.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place32.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place32.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place32.setBackground(Color.green);
                 break;
             case "place33":
+                if (place33.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place33.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place33.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place33.setBackground(Color.green);
                 break;
             case "place34":
+                if (place34.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place34.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place34.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place34.setBackground(Color.green);
                 break;
             case "place35":
+                if (place35.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place35.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place35.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place35.setBackground(Color.green);
                 break;
             case "place36":
+                if (place36.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place36.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place36.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place36.setBackground(Color.green);
                 break;
             case "place37":
+                if (place37.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place37.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place37.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place37.setBackground(Color.green);
                 break;
             case "place38":
+                if (place38.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place38.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place38.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place38.setBackground(Color.green);
                 break;
             case "place39":
+                if (place39.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place39.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place39.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place39.setBackground(Color.green);
                 break;
             case "place40":
+                if (place40.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place40.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place40.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place40.setBackground(Color.green);
                 break;
             case "place41":
+                if (place41.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place41.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place41.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place41.setBackground(Color.green);
                 break;
             case "place42":
+                if (place42.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place42.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place42.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place42.setBackground(Color.green);
                 break;
             case "place43":
+                if (place43.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place43.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place43.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place43.setBackground(Color.green);
                 break;
             case "place44":
+                if (place44.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place44.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place44.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place44.setBackground(Color.green);
                 break;
             case "place45":
+                if (place45.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place45.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place45.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place45.setBackground(Color.green);
                 break;
             case "place46":
+                if (place46.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place46.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place46.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place46.setBackground(Color.green);
                 break;
             case "place47":
+                if (place47.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place47.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place47.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place47.setBackground(Color.green);
                 break;
             case "place48":
+                if (place48.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place48.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place48.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place48.setBackground(Color.green);
                 break;
             case "place49":
+                if (place49.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place49.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place49.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place49.setBackground(Color.green);
                 break;
             case "place50":
+                if (place50.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place50.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place50.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place50.setBackground(Color.green);
                 break;
             case "place51":
+                if (place51.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place51.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place51.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place51.setBackground(Color.green);
                 break;
             case "place52":
+                if (place52.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place52.getBackground() == Color.yellow) {
+                    kickYellow();
+                } else if (place52.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place52.setBackground(Color.green);
                 break;
             case "greenplace1":
@@ -3550,159 +4326,523 @@ public class layout extends javax.swing.JFrame {
     public void yellowSetBg(String name) {
         switch (name) {
             case "place1":
+                if (place1.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place1.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place1.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place1.setBackground(Color.yellow);
                 break;
             case "place2":
+                if (place2.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place2.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place2.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place2.setBackground(Color.yellow);
                 break;
             case "place3":
+                if (place3.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place3.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place3.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place3.setBackground(Color.yellow);
                 break;
             case "place4":
+                if (place4.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place4.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place4.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place4.setBackground(Color.yellow);
                 break;
             case "place5":
+                if (place5.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place5.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place5.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place5.setBackground(Color.yellow);
                 break;
             case "place6":
+                if (place6.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place6.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place6.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place6.setBackground(Color.yellow);
                 break;
             case "place7":
+                if (place7.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place7.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place7.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place7.setBackground(Color.yellow);
                 break;
             case "place8":
+                if (place8.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place8.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place8.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place8.setBackground(Color.yellow);
                 break;
             case "place9":
+                if (place9.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place9.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place9.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place9.setBackground(Color.yellow);
                 break;
             case "place10":
+                if (place10.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place10.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place10.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place10.setBackground(Color.yellow);
                 break;
             case "place11":
+                if (place11.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place11.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place11.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place11.setBackground(Color.yellow);
                 break;
             case "place12":
+                if (place12.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place12.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place12.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place12.setBackground(Color.yellow);
                 break;
             case "place13":
+                if (place13.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place13.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place13.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place13.setBackground(Color.yellow);
                 break;
             case "place14":
+                if (place14.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place14.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place14.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place14.setBackground(Color.yellow);
                 break;
             case "place15":
+                if (place15.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place15.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place15.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place15.setBackground(Color.yellow);
                 break;
             case "place16":
+                if (place16.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place16.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place16.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place16.setBackground(Color.yellow);
                 break;
             case "place17":
+                if (place17.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place17.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place17.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place17.setBackground(Color.yellow);
                 break;
             case "place18":
+                if (place18.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place18.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place18.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place18.setBackground(Color.yellow);
                 break;
             case "place19":
+                if (place19.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place19.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place19.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place19.setBackground(Color.yellow);
                 break;
             case "place20":
+                if (place20.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place20.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place20.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place20.setBackground(Color.yellow);
                 break;
             case "place21":
+                if (place21.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place21.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place21.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place21.setBackground(Color.yellow);
                 break;
             case "place22":
+                if (place22.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place22.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place22.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place22.setBackground(Color.yellow);
                 break;
             case "place23":
+                if (place23.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place23.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place23.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place23.setBackground(Color.yellow);
                 break;
             case "place24":
+                if (place24.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place24.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place24.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place24.setBackground(Color.yellow);
                 break;
             case "place25":
+                if (place25.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place25.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place25.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place25.setBackground(Color.yellow);
                 break;
             case "place26":
+                if (place26.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place26.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place26.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place26.setBackground(Color.yellow);
                 break;
             case "place27":
+                if (place27.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place27.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place27.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place27.setBackground(Color.yellow);
                 break;
             case "place28":
+                if (place28.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place28.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place28.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place28.setBackground(Color.yellow);
                 break;
             case "place29":
+                if (place29.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place29.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place29.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place29.setBackground(Color.yellow);
                 break;
             case "place30":
+                if (place30.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place30.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place30.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place30.setBackground(Color.yellow);
                 break;
             case "place31":
+                if (place31.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place31.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place31.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place31.setBackground(Color.yellow);
                 break;
             case "place32":
+                if (place32.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place32.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place32.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place32.setBackground(Color.yellow);
                 break;
             case "place33":
+                if (place33.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place33.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place33.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place33.setBackground(Color.yellow);
                 break;
             case "place34":
+                if (place34.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place34.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place34.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place34.setBackground(Color.yellow);
                 break;
             case "place35":
+                if (place35.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place35.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place35.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place35.setBackground(Color.yellow);
                 break;
             case "place36":
+                if (place36.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place36.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place36.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place36.setBackground(Color.yellow);
                 break;
             case "place37":
+                if (place37.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place37.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place37.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place37.setBackground(Color.yellow);
                 break;
             case "place38":
+                if (place38.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place38.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place38.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place38.setBackground(Color.yellow);
                 break;
             case "place39":
+                if (place39.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place39.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place39.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place39.setBackground(Color.yellow);
                 break;
             case "place40":
+                if (place40.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place40.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place40.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place40.setBackground(Color.yellow);
                 break;
             case "place41":
+                if (place41.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place41.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place41.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place41.setBackground(Color.yellow);
                 break;
             case "place42":
+                if (place42.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place42.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place42.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place42.setBackground(Color.yellow);
                 break;
             case "place43":
+                if (place43.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place43.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place43.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place43.setBackground(Color.yellow);
                 break;
             case "place44":
+                if (place44.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place44.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place44.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place44.setBackground(Color.yellow);
                 break;
             case "place45":
+                if (place45.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place45.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place45.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place45.setBackground(Color.yellow);
                 break;
             case "place46":
+                if (place46.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place46.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place46.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place46.setBackground(Color.yellow);
                 break;
             case "place47":
+                if (place47.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place47.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place47.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place47.setBackground(Color.yellow);
                 break;
             case "place48":
+                if (place48.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place48.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place48.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place48.setBackground(Color.yellow);
                 break;
             case "place49":
+                if (place49.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place49.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place49.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place49.setBackground(Color.yellow);
                 break;
             case "place50":
+                if (place50.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place50.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place50.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place50.setBackground(Color.yellow);
                 break;
             case "place51":
+                if (place51.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place51.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place51.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place51.setBackground(Color.yellow);
                 break;
             case "place52":
+                if (place52.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place52.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place52.getBackground() == Color.blue) {
+                    kickBlue();
+                }
                 place52.setBackground(Color.yellow);
                 break;
             case "yellowplace1":
@@ -3729,159 +4869,524 @@ public class layout extends javax.swing.JFrame {
     public void blueSetBg(String name) {
         switch (name) {
             case "place1":
+                if (place1.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place1.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place1.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place1.setBackground(Color.blue);
                 break;
             case "place2":
+                if (place2.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place2.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place2.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place2.setBackground(Color.blue);
                 break;
             case "place3":
+                if (place3.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place3.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place3.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place3.setBackground(Color.blue);
                 break;
             case "place4":
+                if (place4.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place4.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place4.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place4.setBackground(Color.blue);
                 break;
             case "place5":
+                if (place5.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place5.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place5.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place5.setBackground(Color.blue);
                 break;
             case "place6":
+                if (place6.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place6.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place6.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place6.setBackground(Color.blue);
                 break;
             case "place7":
+                if (place7.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place7.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place7.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place7.setBackground(Color.blue);
                 break;
             case "place8":
+                if (place8.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place8.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place8.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place8.setBackground(Color.blue);
                 break;
             case "place9":
+                if (place9.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place9.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place9.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place9.setBackground(Color.blue);
                 break;
             case "place10":
+                if (place10.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place10.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place10.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place10.setBackground(Color.blue);
                 break;
             case "place11":
+                if (place11.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place11.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place11.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place11.setBackground(Color.blue);
                 break;
             case "place12":
+                if (place12.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place12.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place12.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place12.setBackground(Color.blue);
                 break;
             case "place13":
+                if (place13.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place13.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place13.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place13.setBackground(Color.blue);
                 break;
             case "place14":
+                if (place14.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place14.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place14.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place14.setBackground(Color.blue);
                 break;
             case "place15":
+                if (place15.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place15.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place15.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place15.setBackground(Color.blue);
                 break;
             case "place16":
+                if (place16.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place16.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place16.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place16.setBackground(Color.blue);
                 break;
             case "place17":
+                if (place17.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place17.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place17.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place17.setBackground(Color.blue);
                 break;
             case "place18":
+                if (place18.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place18.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place18.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place18.setBackground(Color.blue);
                 break;
             case "place19":
+                if (place19.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place19.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place19.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place19.setBackground(Color.blue);
                 break;
             case "place20":
+                if (place20.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place20.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place20.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place20.setBackground(Color.blue);
                 break;
             case "place21":
+                if (place21.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place21.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place21.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place21.setBackground(Color.blue);
                 break;
             case "place22":
+                if (place22.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place22.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place22.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place22.setBackground(Color.blue);
                 break;
             case "place23":
+                if (place23.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place23.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place23.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place23.setBackground(Color.blue);
                 break;
             case "place24":
+                if (place24.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place24.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place24.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place24.setBackground(Color.blue);
                 break;
             case "place25":
+                if (place25.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place25.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place25.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place25.setBackground(Color.blue);
                 break;
             case "place26":
+                if (place26.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place26.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place26.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place26.setBackground(Color.blue);
                 break;
             case "place27":
+                if (place27.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place27.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place27.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place27.setBackground(Color.blue);
                 break;
             case "place28":
+                if (place28.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place28.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place28.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place28.setBackground(Color.blue);
                 break;
             case "place29":
+                if (place29.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place29.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place29.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place29.setBackground(Color.blue);
                 break;
             case "place30":
+                if (place30.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place30.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place30.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place30.setBackground(Color.blue);
                 break;
             case "place31":
+                if (place31.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place31.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place31.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place31.setBackground(Color.blue);
                 break;
             case "place32":
+                if (place32.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place32.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place32.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place32.setBackground(Color.blue);
                 break;
             case "place33":
+                if (place33.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place33.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place33.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place33.setBackground(Color.blue);
                 break;
             case "place34":
+                if (place34.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place34.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place34.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place34.setBackground(Color.blue);
                 break;
             case "place35":
+                if (place35.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place35.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place35.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place35.setBackground(Color.blue);
                 break;
             case "place36":
+                if (place36.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place36.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place36.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place36.setBackground(Color.blue);
                 break;
             case "place37":
+                if (place37.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place37.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place37.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place37.setBackground(Color.blue);
                 break;
             case "place38":
+                if (place38.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place38.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place38.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place38.setBackground(Color.blue);
                 break;
             case "place39":
+                if (place39.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place39.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place39.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place39.setBackground(Color.blue);
                 break;
             case "place40":
+                if (place40.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place40.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place40.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place40.setBackground(Color.blue);
                 break;
             case "place41":
+                if (place41.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place41.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place41.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place41.setBackground(Color.blue);
                 break;
             case "place42":
+                if (place42.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place42.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place42.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place42.setBackground(Color.blue);
                 break;
             case "place43":
+                if (place43.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place43.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place43.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place43.setBackground(Color.blue);
                 break;
             case "place44":
+                if (place44.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place44.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place44.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place44.setBackground(Color.blue);
                 break;
             case "place45":
+                if (place45.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place45.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place45.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place45.setBackground(Color.blue);
                 break;
             case "place46":
+                if (place46.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place46.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place46.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place46.setBackground(Color.blue);
                 break;
             case "place47":
+                if (place47.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place47.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place47.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place47.setBackground(Color.blue);
                 break;
             case "place48":
+                if (place48.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place48.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place48.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place48.setBackground(Color.blue);
                 break;
             case "place49":
+                if (place49.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place49.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place49.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place49.setBackground(Color.blue);
                 break;
             case "place50":
+                if (place50.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place50.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place50.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place50.setBackground(Color.blue);
                 break;
             case "place51":
+                
+                if (place51.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place51.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place51.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place51.setBackground(Color.blue);
                 break;
             case "place52":
+                if (place52.getBackground() == Color.red) {
+                    kickRed();
+                } else if (place52.getBackground() == Color.green) {
+                    kickGreen();
+                } else if (place52.getBackground() == Color.yellow) {
+                    kickYellow();
+                }
                 place52.setBackground(Color.blue);
                 break;
             case "blueplace1":
